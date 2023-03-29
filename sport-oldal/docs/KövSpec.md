@@ -33,3 +33,5 @@ Mivel a megrendelő számos edzőtermet üzemeltet, így szeretne egy központi 
 aki érvényes bérlettel rendelkezik ne csak ott tudjon edzeni ahol kiváltotta a bérletet, hanem az összes edzőtermeiben.
 Teszt felesleges volt
 Teszt live 
+
+HD edit teszt
