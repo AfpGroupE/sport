@@ -32,4 +32,4 @@ A rendszergazdai oldalról viszont lehetőséget biztosítanák videók, képek 
 Mivel a megrendelő számos edzőtermet üzemeltet, így szeretne egy központi adatbázist is létrehozni azzal a szándékkal, hogy 
 aki érvényes bérlettel rendelkezik ne csak ott tudjon edzeni ahol kiváltotta a bérletet, hanem az összes edzőtermeiben.
 Teszt felesleges volt
-
+Teszt live 
