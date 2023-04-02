@@ -32,6 +32,37 @@ A rendszergazdai oldalról viszont lehetőséget biztosítanák videók, képek 
 Mivel a megrendelő számos edzőtermet üzemeltet, így szeretne egy központi adatbázist is létrehozni azzal a szándékkal, hogy 
 aki érvényes bérlettel rendelkezik ne csak ott tudjon edzeni ahol kiváltotta a bérletet, hanem az összes edzőtermeiben.
 
+## 4. Jelenlegi üzleti folyamatok modellje
+Üzleti szereplők: 	
+-	vendég (sportoló)
+
+Üzleti munkatárs: 	
+-	gym center alkalmazott
+
+Üzleti entitások: 		
+-	bérlet
+-	nyilvántartás a vendégekről (személyes adatok, bérlet típusa, érvényessége) (Excel táblázat)
+-	nyilvántartás gym center alkalmazottairól (Excel táblázat)
+-	nyilvántartás személyi edzők beosztásáról (Excel táblázat)
+-	edzéstervek listája (Word dokumentum)
+-	táplálkozási tanácsok listája (Word dokumentum)
+-	internetes közössági felületek (Facebook, Facebook Messenger, YouTube, WhatsApp, Instagram, stb.)
+-	árlista a szolgálatásokról (Word dokumentum)
+
+
+Üzleti folyamatok:
+-	Új alkalmazott felvétele: alkalmazott személy adtok beírása a nyilvántartásba (Gym center ügyvezetői végzik) (Név, lakcím, telefonszám, lakcím, születési dátum, munkakör).
+-	Új vendég felvétele: vendég beírása a nyilvántartásba (Gym center alkalmazottak végzik) (Név, lakcím, telefonszám, lakcím, születési dátum) => bérlet kiállítása átadása => bérlet típus, érvényesség felvitele a nyilvántartásba.		
+-	Személyi edző foglalás: vendég telefonon egyeztet a személyi edzőkkel és foglal időpontot => időpont foglalás felvitel a nyilvántartásba (Gym center alkalmazottak végzik)
+-	Edzéstervek készítése: edzéstervek írása => nyomtatása személyi számítógép segítségével vagy edzéstervek sokszorosítása másológép segítségével (Gym center alkalmazottak végzik).
+-	Táplálkozási tanácsok készítése: táplálkozási tanácsok írása => nyomtatása személyi számítógép segítségével vagy táplálkozási tanácsok sokszorosítása másológép segítségével (Gym center alkalmazottak végzik).
+-	Kapcsolattartás a vendégekkel: hírek, edzéstervek, táplálkozási tanácsok, gyakorlatok megosztása internetes közösségi felületeken (Gym center alkalmazottak végzik).
+-	Alkalmazott keresése a nyilvántartásban: keresés gym center alkalmazottak nyilvántartásában Excel táblázatban (Gym center alkalmazottak végzik).
+-	Vendég keresése a nyilvántartásban: keresés vendégek nyilvántartásában Excel táblázatban (Gym center alkalmazottak végzik).
+-	Edzéstervek keresése a nyilvántartásban: Edzéstervek dokumentum könyvtárban elnevezés szerint (Gym center alkalmazottak végzik).
+-	Táplálkozási tanácsok keresése a nyilvántartásban: Táplálkozási tanácsok dokumentum könyvtárban elnevezés szerint (Gym center alkalmazottak végzik).
+
+
 ## 6. Követelménylista
 
 Modul|ID|Verzió|Név|Kifejtés
