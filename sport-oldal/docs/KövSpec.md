@@ -64,6 +64,38 @@ aki érvényes bérlettel rendelkezik ne csak ott tudjon edzeni ahol kiváltotta
 -	Tagság megszűnése: A tásági kártyán rögzített lejárati dátummal megszűnik a tagság => a recepciónál munkát végző alkalmazott deaktiválja a sorszámát => lokális adatbázisban módosítja a jogosultságot (lejárt tagság).
 -	Tagsági díj megújítása: A recepciónál munkát végző alkalmazott új tagsági kártyát állít ki => lokális adatbázisban módosítja a jogosultságot (érvényes tagság) és rögzíti a bérlet lejárati dátumát.
 
+## 5. Igényelt üzleti folyamatok modellje
+Üzleti folyamatok: 
+
+Online folyamatok vendég(felhasználó) számára:
+Amíg nem jelentkezik be a felhasználó addig csak a Galéria, Csapat, Árlista, Kapcsolat és a Bejelentkezési menűk érhetőek csak el.
+
+- Bejelentkezés: bejelentkezés menü => felhasználó név és jelszó megadása => Bejelentkezési oldal megjelenése. => Edzéstervek, Hírek menü elérhetővé válik.
+- Kijelentkezés: bejelentkezés menü => Kijelentkezés gombra kattintás
+
+Online folyamatok alkalmazottak számára:
+Az alkalmazottak minden menüpontot és funkciót elérhetnek, amit a vendégek.
+
+- Új vendég felvitele: alkalmazott jogosultsággal belépés => vendégek nyilvántartása menü => új vendég menü => adatok megadása => véglegesítés.
+- Vendégek adatainak módosítása: alkalmazott jogosultsággal belépés => vendégek nyilvántartása menü => vendégek listája menü => vendég neve melletti szerkesztés gombra kattintás => adatok megadása => véglegesítés.
+- Vendégek adatainak módosítása: alkalmazott jogosultsággal belépés => vendégek nyilvántartása menü => vendégek keresése menü => adatok megadása => vendég neve melletti szerkesztés gombra kattintás => adatok megadása. => véglegesítés.
+- Vendégek adatainak törlése: alkalmazott jogosultsággal belépés => vendégek nyilvántartása menü => vendégek listája menü => vendég neve melletti törlés gombra kattintás => megerősítés.
+- Vendégek adatainak törlése: alkalmazott jogosultsággal belépés => vendégek nyilvántartása menü => vendégek keresése menü => vendég neve melletti törlés gombra kattintás => megerősítés.
+- Vendégek adatainak böngészése: alkalmazott jogosultsággal belépés => vendégek nyilvántartása menü => vendégek listája menü
+- Vendégek adatainak böngészése kereséssel: alkalmazott jogosultsággal belépés => vendégek nyilvántartása menü => vendégek keresése menü => adatok megadása =>
+- Új hír felvitele: alkalmazott jogosultsággal belépés => Hírek felvitele menü => adatok megadása => véglegesítés. 
+- Hírek böngészése, szerkesztése: alkalmazott jogosultsággal belépés => Hírek menü => hírek bejegyzései alatt szerkesztés gombra kattintás => adatok módosítása, megadása => véglegesítés.
+- Hírek böngészése, törlése: alkalmazott jogosultsággal belépés => Hírek menü => hírek bejegyzései alatt törlés gombra kattintás => megerősítés.
+
+Online folyamatok adminisztrátorok számára:
+Az adminisztrátorok minden menüpontot és funkciót elérhetnek, amit a vendégek. minden menüpontot és funkciót elérhetnek, amit a vendégek.
+
+- Új alkalmazott felvitele: adminisztrátor jogosultsággal belépés => alkalmazottak nyilvántartása menü => új alkalmazottak menü => adatok megadása => véglegesítés.
+- Alkalmazott adatainak módosítása: adminisztrátor jogosultsággal belépés => alkalmazottak nyilvántartása menü => alkalmazottak listája menü => alkalmazott neve melletti szerkesztés gombra kattintás => adatok megadása => véglegesítés.
+- Alkalmazott adatainak módosítása: adminisztrátor jogosultsággal belépés => alkalmazottak nyilvántartása menü => alkalmazottak keresése menü => adatok megadása => alkalmazott neve melletti szerkesztés gombra kattintás => adatok megadása. => véglegesítés.
+- Alkalmazott adatainak törlése: adminisztrátor jogosultsággal belépés => alkalmazottak nyilvántartása menü => alkalmazottak listája menü => alkalmazott neve melletti törlés gombra kattintás => megerősítés.
+- Alkalmazott adatainak törlése: adminisztrátor jogosultsággal belépés => alkalmazottak nyilvántartása menü => alkalmazottak keresése menü => alkalmazott neve melletti törlés gombra kattintás => megerősítés.
+
 ## 6. Követelménylista
 
 Modul|ID|Verzió|Név|Kifejtés
