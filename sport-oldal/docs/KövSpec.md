@@ -33,11 +33,12 @@ Mivel a megrendelő számos edzőtermet üzemeltet, így szeretne egy központi 
 aki érvényes bérlettel rendelkezik ne csak ott tudjon edzeni ahol kiváltotta a bérletet, hanem az összes edzőtermeiben.
 
 ## 4. Jelenlegi üzleti folyamatok modellje
+
 Üzleti szereplők: 	
 -	vendég (sportoló)
 
 Üzleti munkatárs: 	
--	gym center alkalmazott
+-	gym center alkalmazottati(személyi edzők, dietetikusok, edzőterem tulajdonosai)
 
 Üzleti entitások: 		
 -	bérlet
@@ -48,7 +49,6 @@ aki érvényes bérlettel rendelkezik ne csak ott tudjon edzeni ahol kiváltotta
 -	táplálkozási tanácsok listája (Word dokumentum)
 -	internetes közössági felületek (Facebook, Facebook Messenger, YouTube, WhatsApp, Instagram, stb.)
 -	árlista a szolgálatásokról (Word dokumentum)
-
 
 Üzleti folyamatok:
 -	Új alkalmazott felvétele: alkalmazott személy adtok beírása a nyilvántartásba (Gym center ügyvezetői végzik) (Név, lakcím, telefonszám, lakcím, születési dátum, munkakör).
@@ -61,7 +61,8 @@ aki érvényes bérlettel rendelkezik ne csak ott tudjon edzeni ahol kiváltotta
 -	Vendég keresése a nyilvántartásban: keresés vendégek nyilvántartásában Excel táblázatban (Gym center alkalmazottak végzik).
 -	Edzéstervek keresése a nyilvántartásban: Edzéstervek dokumentum könyvtárban elnevezés szerint (Gym center alkalmazottak végzik).
 -	Táplálkozási tanácsok keresése a nyilvántartásban: Táplálkozási tanácsok dokumentum könyvtárban elnevezés szerint (Gym center alkalmazottak végzik).
-
+-	Tagság megszűnése: A tásági kártyán rögzített lejárati dátummal megszűnik a tagság => a recepciónál munkát végző alkalmazott deaktiválja a sorszámát => lokális adatbázisban módosítja a jogosultságot (lejárt tagság).
+-	Tagsági díj megújítása: A recepciónál munkát végző alkalmazott új tagsági kártyát állít ki => lokális adatbázisban módosítja a jogosultságot (érvényes tagság) és rögzíti a bérlet lejárati dátumát.
 
 ## 6. Követelménylista
 
