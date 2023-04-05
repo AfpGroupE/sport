@@ -21,5 +21,5 @@ A rendszernek a következő funkciókat kell ellátnia:
 *	dolgozók tudjanak sportolókat regisztrálni
 
 Előfeltételek:
-*	adminisztrátoroknak és a sportolóknak a rendszer használatához felhasználónév és jelszó szükséges
+*	adminisztrátoroknak, sportolóknak, a dolgozóknak a rendszer használatához felhasználónév és jelszó szükséges
 
