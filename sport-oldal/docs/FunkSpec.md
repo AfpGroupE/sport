@@ -24,3 +24,7 @@ Előfeltételek:
 *	adminisztrátoroknak, sportolóknak, a dolgozóknak a rendszer használatához felhasználónév és jelszó szükséges
 
 ![usecase_dia](https://github.com/AfpGroupE/sport/blob/main/sport-oldal/docs/Use_Case_Web.jpg)
+
+## 3. Megfeleltetés a követelmények és a használati eseteknek
+
+
