@@ -23,3 +23,4 @@ A rendszernek a következő funkciókat kell ellátnia:
 Előfeltételek:
 *	adminisztrátoroknak, sportolóknak, a dolgozóknak a rendszer használatához felhasználónév és jelszó szükséges
 
+![usecase_dia](https://github.com/AfpGroupE/sport/blob/main/sport-oldal/docs/Use_Case_Web.drawio.png)
