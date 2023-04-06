@@ -20,7 +20,7 @@ fetch("/api").then(
           <p>Loading...</p>
         ): (
             backendData.users.map((user, i) => (
-              <p key={i}>(user)</p>
+              <p key={i}>{user}</p>
             ))
         )}
         

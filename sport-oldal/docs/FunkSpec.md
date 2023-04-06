@@ -8,3 +8,23 @@ A tulajdonos illetve a rendszer fő adminisztrátora teljes körű jogosultságo
 A recepciós munkakörben dolgozók új sportolót tudnak majd felvinni illetve azok adatait tudják majd módosítani. a megrendelő. Ha későbbiekben igény merülne fel egyes recepciós jogkörének a módosítására akkor az későbbiekben is megoldható.
 A terembe járó sportolók az adatbázis szemszögből csak a felhasználó nevüket illetve az e-mail címüket illetve a jelszavukat tudják felvinni a rendszerbe.
 A rendszernek nem célja, hogy bárki számára elérhető legyen az oldal tartalma, mert a tulajdonos ezt a plusz szolgáltatás csakis az érvényes bérlettel rendelkező tagok számára teszi elérhetővé.
+
+## 2. Használati esetek
+
+A rendszer használói a következők:</br>
+*	havi vagy éves bérlettel rendelkező sportoló
+*	dolgozó 
+*	adminisztrátor
+
+A rendszernek a következő funkciókat kell ellátnia:
+*	az adminisztrátorok tudjanak dolgozókat regisztrálni és törölni
+*	dolgozók tudjanak sportolókat regisztrálni
+
+Előfeltételek:
+*	adminisztrátoroknak, sportolóknak, a dolgozóknak a rendszer használatához felhasználónév és jelszó szükséges
+
+![usecase_dia](https://github.com/AfpGroupE/sport/blob/main/sport-oldal/docs/Use_Case_Web.jpg)
+
+## 3. Megfeleltetés a követelmények és a használati eseteknek
+
+A K01,K02,K03: A weboldal úgy lesz kialakítva, hogy a rendszer bármely szereplője csakis regisztráció után érje el az oldal tartalmát. Az adminisztrátor regisztrálhat, módosíthat, törölhet dolgozót és sportolót, a dolgozó regisztrálhat, módosíthat sportolót, de nem törölheti azt. A sporoló dolgozói vagy adminisztrátori regisztráció után regisztrálhatja magát és itt megadhatja a saját felhasználó nevét, jelszavát e-mail címét.
