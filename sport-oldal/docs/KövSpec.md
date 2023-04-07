@@ -235,11 +235,81 @@ C-->D;
 Online folyamatok adminisztrátorok számára:
 Az adminisztrátorok minden menüpontot és funkciót elérhetnek, amit a vendégek. minden menüpontot és funkciót elérhetnek, amit a vendégek.
 
-- Új alkalmazott felvitele: adminisztrátor jogosultsággal belépés => alkalmazottak nyilvántartása menü => új alkalmazottak menü => adatok megadása => véglegesítés.
-- Alkalmazott adatainak módosítása: adminisztrátor jogosultsággal belépés => alkalmazottak nyilvántartása menü => alkalmazottak listája menü => alkalmazott neve melletti szerkesztés gombra kattintás => adatok megadása => véglegesítés.
-- Alkalmazott adatainak módosítása: adminisztrátor jogosultsággal belépés => alkalmazottak nyilvántartása menü => alkalmazottak keresése menü => adatok megadása => alkalmazott neve melletti szerkesztés gombra kattintás => adatok megadása. => véglegesítés.
-- Alkalmazott adatainak törlése: adminisztrátor jogosultsággal belépés => alkalmazottak nyilvántartása menü => alkalmazottak listája menü => alkalmazott neve melletti törlés gombra kattintás => megerősítés.
-- Alkalmazott adatainak törlése: adminisztrátor jogosultsággal belépés => alkalmazottak nyilvántartása menü => alkalmazottak keresése menü => alkalmazott neve melletti törlés gombra kattintás => megerősítés.
+Új alkalmazott felvitele
+```mermaid
+flowchart TD;
+A("*Adminisztrátor* jogosultsággal belépés");
+B("Alkalmazottak nyilvántartása menü");
+C("Új alkalmazottak menü");
+D("Adatok megadása");
+E("Véglegesítés")
+A-->B;
+B-->C;
+C-->D;
+D-->E;
+```
+
+Alkalmazott adatainak módosítása
+```mermaid
+flowchart TD;
+A("*Adminisztrátor* jogosultsággal belépés");
+B("Alkalmazottak nyilvántartása menü");
+C("Alkalmazottak listája menü");
+D("Alkalmazott neve melletti szerkesztés gombra kattintás");
+E("Adatok megadása");
+F("Véglegesítés")
+A-->B;
+B-->C;
+C-->D;
+D-->E;
+E-->F;
+```
+
+Alkalmazott adatainak módosítása 2.
+```mermaid
+flowchart TD;
+A("*Adminisztrátor* jogosultsággal belépés");
+B("Alkalmazottak nyilvántartása menü");
+C("alkalmazottak keresése menü");
+D("Adatok megadása");
+E("Alkalmazott neve melletti szerkesztés gombra kattintás");
+F("Adatok megadása");
+G("Véglegesítés")
+A-->B;
+B-->C;
+C-->D;
+D-->E;
+E-->F;
+F-->G;
+```
+
+Alkalmazott adatainak törlése
+```mermaid
+flowchart TD;
+A("*Adminisztrátor* jogosultsággal belépés");
+B("Alkalmazottak nyilvántartása menü");
+C("Alkalmazottak listája menü");
+D("Alkalmazott neve melletti törlés gombra kattintás");
+E("Megerősítés");
+A-->B;
+B-->C;
+C-->D;
+D-->E;
+```
+
+Alkalmazott adatainak törlése 2.
+```mermaid
+flowchart TD;
+A("*Adminisztrátor* jogosultsággal belépés");
+B("Alkalmazottak nyilvántartása menü");
+C("Alkalmazottak keresése menü");
+D("Alkalmazott neve melletti törlés gombra kattintás");
+E("Megerősítés");
+A-->B;
+B-->C;
+C-->D;
+D-->E;
+```
 
 ## 6. Követelménylista
 
