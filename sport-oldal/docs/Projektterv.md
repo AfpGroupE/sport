@@ -13,7 +13,7 @@ jogosultságot fog kapni.
 
 ### 5.2 Rendszerhasználati esetek
 
-![használati eset](use_case.drawio.png)
+![használati eset](https://github.com/AfpGroupE/sport/blob/main/sport-oldal/docs/flowchart_of_system_use_case.jpg)
 
 ### 5.3 Menühiearchiák
 A weboldal bejelentkezés nélkül 4 menü lesz elérhető. Főoldal, kapcsolat, bejelentkezés, regisztráció. 
