@@ -33,3 +33,30 @@ K05: Weboldalon az admin jogosultsági szinten lévő személynel lehetősége l
 A K06,K07,K08: A weboldalon lehetőség lesz szöveg, kép illetve videó feltöltése
 K09: A weboldalon meg fog jelenni mindíg az aktuális árlista. 
 K10: A weboldalon lehetőség nyílik különböző sporttal kapcsolatos tartalom elérése, megtekintése
+
+Jelenlegi üzleti folyamatok
+
+```mermaid
+flowchart TD;
+A("A sportoló vásárol egy edzőterem bérletet");
+B("A sportoló fizet egy személyi edzőknek \naz egyénileg meghatározott fizikai erőnlét elérésének elősegítéséhez");
+C("A személyi edzőnk felméri a sportolót \nés edzési tervet készít a korábban leegyeztetett cél elérése érdekében");
+D("Az edző feltölti a videókat és a tervezetet \negy általa szimpatikusnak választott webhelyre");
+A-->B;
+B-->C;
+C-->D;
+D-->A;
+```
+### Adatbázis szemszögből
+
+```mermaid
+flowchart TD;
+A("A sportoló vásárol egy edzőtermi bérletet");
+B("A recepciós felviszi az adatait a helyi adatbázsba");
+C("A recepciós regisztrálja a weboldalra a sportolót, belépési adatait adatbázisban tároljuk");
+D("A sportoló email értesítést kap a bejelentkezési adatairól. Az email kiküldése automatikusan történik, adatbázis lekéréssel");
+A-->B;
+B-->C;
+C-->D;
+D-->A;
+```
