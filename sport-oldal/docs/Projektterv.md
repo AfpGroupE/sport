@@ -20,12 +20,12 @@ A weboldal bejelentkezés nélkül 4 menü lesz elérhető. Főoldal, kapcsolat,
 A rendszerbe való bejelentkezés után lesz látható a felhasználó által használható menürendszer.
 A menüben 10 db gomb lesz kialakítva amelyre rákattintás után eltérő tartalom lesz megjelenítve. A menürendszer úgy lesz kialakítva, hogy 
 a felhasználó annyi gombot fog látni amilyen jogköre van.
-A rendszerünkben 3 jogkör lesz.
+A rendszerünkben 3 jogkör lesz.</br>
 -**Felhasználói jogkörrel rendelkező** Az a felhasználó aki csak felhasználói jogkörrel rendelkezik, azok a 10 menüpontból
-csak 9-et fog elérni amelyek a következők: Főoldal,Galéria,Videók,Árlista,Étrendek,Edzéstervek,Hírek,Kapcsolat,Kijelentkezés.
+csak 9-et fog elérni amelyek a következők: Főoldal,Galéria,Videók,Árlista,Étrendek,Edzéstervek,Hírek,Kapcsolat,Kijelentkezés.</br>
 -**Dolgozói jogkörrel rendelkező** Dolgozói jogkörrel rendelkező személynek meg fog jelenni az előzőekben felsorolt 9 menü amely ki
 lesz egészítve felhasználó regisztrálása menü, ahol lehetőség lesz új sportoló hozzáadása, sportoló törlése , sportoló adatainak módosítása illetve
-sportoló keresése funkciók.
+sportoló keresése funkciók.</br>
 -**Adminisztrátori jogkörrel rendelkező** Adminisztrátori bejelentkezés után a weboldal teljes menürendszre lesz elérhető. Neki meg fog jelenni egy 
 munkatárs crude gomb, amelyre rákattintva lehetősége lesz új munkatárs hozzáadaása, munkatárs törlése, munkatárs adatatinak a módosítása illetve munkatárs 
-keresése funkció.
+keresése funkció.</br>
