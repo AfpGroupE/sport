@@ -94,16 +94,143 @@ Amíg nem jelentkezik be a felhasználó addig csak a Galéria, Csapat, Árlista
 Online folyamatok alkalmazottak számára:
 Az alkalmazottak minden menüpontot és funkciót elérhetnek, amit a vendégek.
 
-- Új vendég felvitele: alkalmazott jogosultsággal belépés => vendégek nyilvántartása menü => új vendég menü => adatok megadása => véglegesítés.
-- Vendégek adatainak módosítása: alkalmazott jogosultsággal belépés => vendégek nyilvántartása menü => vendégek listája menü => vendég neve melletti szerkesztés gombra kattintás => adatok megadása => véglegesítés.
-- Vendégek adatainak módosítása: alkalmazott jogosultsággal belépés => vendégek nyilvántartása menü => vendégek keresése menü => adatok megadása => vendég neve melletti szerkesztés gombra kattintás => adatok megadása. => véglegesítés.
-- Vendégek adatainak törlése: alkalmazott jogosultsággal belépés => vendégek nyilvántartása menü => vendégek listája menü => vendég neve melletti törlés gombra kattintás => megerősítés.
-- Vendégek adatainak törlése: alkalmazott jogosultsággal belépés => vendégek nyilvántartása menü => vendégek keresése menü => vendég neve melletti törlés gombra kattintás => megerősítés.
-- Vendégek adatainak böngészése: alkalmazott jogosultsággal belépés => vendégek nyilvántartása menü => vendégek listája menü
-- Vendégek adatainak böngészése kereséssel: alkalmazott jogosultsággal belépés => vendégek nyilvántartása menü => vendégek keresése menü => adatok megadása =>
-- Új hír felvitele: alkalmazott jogosultsággal belépés => Hírek felvitele menü => adatok megadása => véglegesítés. 
-- Hírek böngészése, szerkesztése: alkalmazott jogosultsággal belépés => Hírek menü => hírek bejegyzései alatt szerkesztés gombra kattintás => adatok módosítása, megadása => véglegesítés.
-- Hírek böngészése, törlése: alkalmazott jogosultsággal belépés => Hírek menü => hírek bejegyzései alatt törlés gombra kattintás => megerősítés.
+Új vendég felvitele
+```mermaid
+flowchart TD;
+A("*Alkalmazott* jogosultsággal belépés");
+B("Vendégek nyilvántartása menü");
+C("Új vendég menü");
+D("Adatok megadása");
+E("Véglegesítés");
+A-->B;
+B-->C;
+C-->D;
+D-->E;
+```
+
+Vendégek adatainak módosítása
+```mermaid
+flowchart TD;
+A("*Alkalmazott* jogosultsággal belépés");
+B("Vendégek nyilvántartása menü");
+C("Vendégek listája menü");
+D("Vendég neve melletti szerkesztés gombra kattintás");
+E("Adatok megadása");
+F("véglegesítés");
+A-->B;
+B-->C;
+C-->D;
+D-->E;
+E-->F;
+```
+
+Vendégek adatainak módosítása 2.
+```mermaid
+flowchart TD;
+A("*Alkalmazott* jogosultsággal belépés");
+B("Vendégek nyilvántartása menü");
+C("Vendégek keresése menü");
+D("Adatok megadása");
+E("vendég neve melletti szerkesztés gombra kattintás");
+F("Adatok megadása");
+G("Véglegesítés");
+A-->B;
+B-->C;
+C-->D;
+D-->E;
+E-->F;
+F-->G;
+```
+
+Vendégek adatainak törlése
+```mermaid
+flowchart TD;
+A("*Alkalmazott* jogosultsággal belépés");
+B("Vendégek nyilvántartása menü");
+C("Vendégek listája menü");
+D("Vendég neve melletti törlés gombra kattintás");
+E("Megerősítés");
+F("Adatok megadása");
+G("Véglegesítés");
+A-->B;
+B-->C;
+C-->D;
+D-->E;
+E-->F;
+F-->G;
+```
+
+Vendégek adatainak törlése 2.
+```mermaid
+flowchart TD;
+A("*Alkalmazott* jogosultsággal belépés");
+B("Vendégek nyilvántartása menü");
+C("Vendégek keresése menü");
+D("Vendég neve melletti törlés gombra kattintás");
+E("Megerősítés");
+A-->B;
+B-->C;
+C-->D;
+D-->E;
+```
+
+Vendégek adatainak böngészése
+```mermaid
+flowchart TD;
+A("*Alkalmazott* jogosultsággal belépés");
+B("Vendégek nyilvántartása menü");
+C("vendégek listája menü");
+A-->B;
+B-->C;
+```
+
+Vendégek adatainak böngészése kereséssel
+```mermaid
+flowchart TD;
+A("*Alkalmazott* jogosultsággal belépés");
+B("Vendégek keresése menü");
+C("Adatok megadása");
+A-->B;
+B-->C;
+```
+
+Új hír felvitele
+```mermaid
+flowchart TD;
+A("*Alkalmazott* jogosultsággal belépés");
+B("Hírek felvitele menü");
+C("Adatok megadása");
+D("Véglegesítés");
+A-->B;
+B-->C;
+C-->D;
+```
+
+Hírek böngészése, szerkesztése
+```mermaid
+flowchart TD;
+A("*Alkalmazott* jogosultsággal belépés");
+B("Hírek menü");
+C("Hírek bejegyzései alatt szerkesztés gombra kattintás");
+D("Adatok módosítása, megadása");
+E("Véglegesítés")
+A-->B;
+B-->C;
+C-->D;
+D-->E;
+```
+
+Hírek törlése
+```mermaid
+flowchart TD;
+A("*Alkalmazott* jogosultsággal belépés");
+B("Hírek menü");
+C("Hírek bejegyzései alatt törlés gombra kattintás");
+D("Megerősítés");
+A-->B;
+B-->C;
+C-->D;
+```
 
 Online folyamatok adminisztrátorok számára:
 Az adminisztrátorok minden menüpontot és funkciót elérhetnek, amit a vendégek. minden menüpontot és funkciót elérhetnek, amit a vendégek.
