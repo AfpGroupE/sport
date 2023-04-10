@@ -104,3 +104,43 @@ Nincsenek vásárolt szoftverkomponensek.
 ### 6.5 Keretrendszer
 - React
 ## 9.Adatbázisterv
+
+**Sportolo egyedet** jellemzi:  
+ idSportolo, ez az elsődleges kulcs, 
+ Szem_Szám,
+ Családnév, 
+ Utónév,
+ Utónév2,
+ Születési_idő,
+ Felhasználó_név,
+ Jelszó,
+ E_mail,
+ Reg_Datum
+ Dolgozó_idDolgozó, ami idegen kulcs,
+
+**Dolgozó egyedet** jellemzi:
+ idDolgozó, ez az elsődleges kulcs
+ Dolg_Szem_Szám,
+ Dolg_Család_Név,
+ Dolg_Utónév,
+ Dolg_Utónév2,
+ Dolg_Szül_Idő,
+ Dolg_Jog_Szint
+
+**Szöveg**
+ idSzöveg, ez az elsődleges kulcs
+ Szöveg_cím,
+ Tartalom,
+ Szöveg_feltölt_ideje,
+ Dolgozó_idDolgozó, ami idegen kulcs
+**Kép**
+ idKép, ez az elsődleges kulcs,
+ Képnév,
+ Kép_link,
+ Kép_Feltöltési_Ideje
+ Dolgozó_idDolgozó ez idegen kulcs
+**Videó**
+ Videonév,
+ Video_link,
+ Video_Feltöltés_Ideje
+ Dolgozó_idDolgozó, ez idegen kulcs
