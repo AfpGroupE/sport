@@ -103,3 +103,4 @@ Nincsenek vásárolt szoftverkomponensek.
 
 ### 6.5 Keretrendszer
 - React
+## 9.Adatbázisterv
