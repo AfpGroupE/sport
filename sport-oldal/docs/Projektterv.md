@@ -149,6 +149,6 @@ Nincsenek vásárolt szoftverkomponensek.
  
  ### 9.1 Logikai Adatmodell
 
-
  **Adatbázis séma**
+ 
  ![database_schema](https://github.com/AfpGroupE/sport/blob/main/sport-oldal/docs/sportoloAdatbazisSema.png)
