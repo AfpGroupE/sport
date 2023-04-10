@@ -144,3 +144,5 @@ Nincsenek vásárolt szoftverkomponensek.
  Video_link,
  Video_Feltöltés_Ideje
  Dolgozó_idDolgozó, ez idegen kulcs
+
+ ![database_schema](https://github.com/AfpGroupE/sport/blob/main/sport-oldal/docs/sportoloAdatbazisSema.png)
