@@ -105,44 +105,50 @@ Nincsenek vásárolt szoftverkomponensek.
 - React
 ## 9.Adatbázisterv
 
-**Sportolo egyedet** jellemzi:  
- idSportolo, ez az elsődleges kulcs, 
- Szem_Szám,
- Családnév, 
- Utónév,
- Utónév2,
- Születési_idő,
- Felhasználó_név,
- Jelszó,
- E_mail,
- Reg_Datum
- Dolgozó_idDolgozó, ami idegen kulcs,
+**Sportolo egyedet** jellemzi:</br>
+ idSportolo, ez az elsődleges kulcs,</br> 
+ Szem_Szám,</br>
+ Családnév,</br> 
+ Utónév,</br>
+ Utónév2,</br>
+ Születési_idő,</br>
+ Felhasználó_név,</br>
+ Jelszó,</br>
+ E_mail,</br>
+ Reg_Datum,</br>
+ Dolgozó_idDolgozó, ami idegen kulcs,</br>
 
-**Dolgozó egyedet** jellemzi:
- idDolgozó, ez az elsődleges kulcs
- Dolg_Szem_Szám,
- Dolg_Család_Név,
- Dolg_Utónév,
- Dolg_Utónév2,
- Dolg_Szül_Idő,
- Dolg_Jog_Szint
+**Dolgozó egyedet** jellemzi:</br>
+ idDolgozó, ez az elsődleges kulcs</br>
+ Dolg_Szem_Szám,</br>
+ Dolg_Család_Név,</br>
+ Dolg_Utónév,</br>
+ Dolg_Utónév2,</br>
+ Dolg_Szül_Idő,</br>
+ Dolg_Jog_Szint,</br>
+ 
+**Szöveg**</br>
+ idSzöveg, ez az elsődleges kulcs</br>
+ Szöveg_cím,</br>
+ Tartalom,</br>
+ Szöveg_feltölt_ideje,</br>
+ Dolgozó_idDolgozó, ami idegen kulcs</br>
+ 
+**Kép**</br>
+ idKép, ez az elsődleges kulcs,</br>
+ Képnév,</br>
+ Kép_link,</br>
+ Kép_Feltöltési_Ideje,</br>
+ Dolgozó_idDolgozó ez idegen kulcs</br>
+ 
+**Videó**</br>
+ Videonév,</br>
+ Video_link,</br>
+ Video_Feltöltés_Ideje</br>
+ Dolgozó_idDolgozó, ez idegen kulcs</br>
+ 
+ ### 9.1 Logikai Adatmodell
 
-**Szöveg**
- idSzöveg, ez az elsődleges kulcs
- Szöveg_cím,
- Tartalom,
- Szöveg_feltölt_ideje,
- Dolgozó_idDolgozó, ami idegen kulcs
-**Kép**
- idKép, ez az elsődleges kulcs,
- Képnév,
- Kép_link,
- Kép_Feltöltési_Ideje
- Dolgozó_idDolgozó ez idegen kulcs
-**Videó**
- Videonév,
- Video_link,
- Video_Feltöltés_Ideje
- Dolgozó_idDolgozó, ez idegen kulcs
 
+ **Adatbázis séma**
  ![database_schema](https://github.com/AfpGroupE/sport/blob/main/sport-oldal/docs/sportoloAdatbazisSema.png)
