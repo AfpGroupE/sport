@@ -148,7 +148,10 @@ Nincsenek vásárolt szoftverkomponensek.
  Dolgozó_idDolgozó, ez idegen kulcs</br>
  
  ### 9.1 Logikai Adatmodell
-
+ **Egyed-kapcsolat diagramm**
+ 
+ ![Entity_relationship](https://github.com/AfpGroupE/sport/blob/main/sport-oldal/docs/Entity_Relation_diagramm.jpg)
+ 
  **Adatbázis séma**
  
  ![database_schema](https://github.com/AfpGroupE/sport/blob/main/sport-oldal/docs/sportoloAdatbazisSema.png)
