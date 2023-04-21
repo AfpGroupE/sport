@@ -2,12 +2,12 @@
 
 ## 1.Jelenlegi helyzet
 
-A cégünket megbízó sport vállalkozás Magyarországon közel 30 edzőtermet üzemeltet.
-Cégünket a partner azzal szándékkal kereste meg, hogy készítsünk neki egy olyan weboldalt, ahol az általuk elkészített edzésterveket, híreket és videólinkeket, fel tudják tölteni. 
-Mivel a megrendelő foglalkoztat dietetikusokat is, így a táplálkozástudomány szakterület is helyet kapna a weboldalon.
-Az elmúlt években többször is be kellett zárni az edzőtermeket, így sokan arra kényszerültek, hogy otthon edzhessenek segítség nélkül.
-Jelenleg az általunk foglalkoztatott személyi edzők különböző felületen osztják meg a sportolóikkal az edzésterveiket, diétás tanácsaikat, amely sokszor a sportolónak nem mindig egyértelmű, hogy hová kell kattintani.
-Időközben igény merült fel az edzőterembe járó sportolók adatainak egy központi adatbázisba való tárolására is. 
+A cégünket megbízó sport vállalkozás Magyarországon közel 30 edzőtermet üzemeltet.<br/>
+Cégünket a partner azzal szándékkal kereste meg, hogy készítsünk neki egy olyan weboldalt, ahol az általuk elkészített edzésterveket, híreket és videólinkeket, fel tudják tölteni.<br/>
+Mivel a megrendelő foglalkoztat dietetikusokat is, így a táplálkozástudomány szakterület is helyet kapna a weboldalon.<br/>
+Az elmúlt években többször is be kellett zárni az edzőtermeket, így sokan arra kényszerültek, hogy otthon edzhessenek segítség nélkül.<br/>
+Jelenleg az általunk foglalkoztatott személyi edzők különböző felületen osztják meg a sportolóikkal az edzésterveiket, diétás tanácsaikat, amely sokszor a sportolónak nem mindig egyértelmű, hogy hová kell kattintani.<br/>
+Időközben igény merült fel az edzőterembe járó sportolók adatainak egy központi adatbázisba való tárolására is. <br/>
 A megrendelő egy olyan komplex weboldalt szeretne a cégünkkel megcsináltatni, amely a sportolói, tulajdonosi, illetve adminisztrációs igényeket tud kielégíteni.
 
 ## 2.Vágyálomrendszer leírása
@@ -26,31 +26,13 @@ A bejelentkezés után a felhasználó rögtön egy igényes webfelülettel tal�
 - Kapcsolat
 - Be és kijelentkezés
 
-Az edzők és a rendszergazdák számára lehetőséget biztosítanák videólinkek, képek és hírek feltöltésére és módosítására. 
+Az edzők és a rendszergazdák számára lehetőséget biztosítanák videólinkek, képek és hírek feltöltésére és módosítására. <br/>
 Mivel a megrendelő számos edzőtermet üzemeltet, így szeretne egy központi adatbázist is létrehozni azzal a szándékkal, hogy 
-aki érvényes bérlettel rendelkezik ne csak ott tudjon edzni, ahol kiváltotta a bérletet, hanem a cég összes edzőtermében.
+aki érvényes bérlettel rendelkezik ne csak ott tudjon edzni, ahol kiváltotta a bérletet, hanem a cég összes edzőtermében.<br/>
 Illetve a megrendelő szeretné a cégük alkalmazásában álló munkavállalók,
 és az edzőterembe látogató vendégek (sportolók) adatait tarolni a fejlesztendő alkalmas adatbázisában.
 
-## 3. A rendszerre vonatkozó szabályok
-
-* General Data Protection Regulation (Általános adatvédelmi rendelet)
-
-
-**Európai uniós rendeletek, irányelvek, ajánlások**
-
-*AZ EURÓPAI PARLAMENT ÉS A TANÁCS (EU) 2019/790 IRÁNYELVE (2019. április 17.)* a digitális egységes piacon a szerzői és szomszédos jogokról, valamint a 96/9/EK és a 2001/29/EK irányelv módosításáról
-
-*AZ EURÓPAI PARLAMENT ÉS A TANÁCS (EU) 2016/679 RENDELETE (2016. április 27.)* a természetes személyeknek a személyes adatok kezelése tekintetében történő védelméről és az ilyen adatok szabad áramlásáról,
-
-*2014/26/EU európai parlamenti és tanácsi irányelv* a szerzői és szomszédos jogokra vonatkozó közös jogkezelésről és a zeneművek belső piacon történő online felhasználásának több területre kiterjedő hatályú engedélyezéséről szóló 2014. február 26-i A Bizottság 2012/417/EU (2012. július 17.) ajánlása a tudományos információkhoz való hozzáférésről és azok megőrzéséről
-
-*2012/417/EU (2012. július 17.)* ajánlása a tudományos információkhoz való hozzáférésről és azok megőrzéséről;
-
-*96/9/EK irányelv* (1996. március 11.) az adatbázisok jogi védelméről
-
-
-## 4. Jelenlegi üzleti folyamatok modellje
+## 3. Jelenlegi üzleti folyamatok modellje
 
 Üzleti szereplők: 	
 -	vendég (sportoló)
@@ -69,20 +51,32 @@ Illetve a megrendelő szeretné a cégük alkalmazásában álló munkavállaló
 -	árlista a szolgálatásokról (Word dokumentum)
 
 Üzleti folyamatok:
+
 -	Új alkalmazott felvétele: alkalmazott személy adtok beírása a nyilvántartásba (Gym center ügyvezetői végzik) (Név, lakcím, telefonszám, lakcím, születési dátum, munkakör).
--	Új vendég felvétele: vendég beírása a nyilvántartásba (Gym center alkalmazottak végzik) (Név, lakcím, telefonszám, lakcím, születési dátum) => bérlet kiállítása átadása => bérlet típus, érvényesség felvitele a nyilvántartásba.		
+
+-	Új vendég felvétele: vendég beírása a nyilvántartásba (Gym center alkalmazottak végzik) (Név, lakcím, telefonszám, lakcím, születési dátum) => bérlet kiállítása átadása => bérlet típus, érvényesség felvitele a nyilvántartásba.
+	
 -	Személyi edző foglalás: vendég telefonon egyeztet a személyi edzőkkel és foglal időpontot => időpont foglalás felvitel a nyilvántartásba (Gym center alkalmazottak végzik)
+
 -	Edzéstervek készítése: edzéstervek írása => nyomtatása személyi számítógép segítségével vagy edzéstervek sokszorosítása másológép segítségével (Gym center alkalmazottak végzik).
+
 -	Táplálkozási tanácsok készítése: táplálkozási tanácsok írása => nyomtatása személyi számítógép segítségével vagy táplálkozási tanácsok sokszorosítása másológép segítségével (Gym center alkalmazottak végzik).
+
 -	Kapcsolattartás a vendégekkel: hírek, edzéstervek, táplálkozási tanácsok, gyakorlatok megosztása internetes közösségi felületeken (Gym center alkalmazottak végzik).
+
 -	Alkalmazott keresése a nyilvántartásban: keresés gym center alkalmazottak nyilvántartásában Excel táblázatban (Gym center alkalmazottak végzik).
+
 -	Vendég keresése a nyilvántartásban: keresés vendégek nyilvántartásában Excel táblázatban (Gym center alkalmazottak végzik).
+
 -	Edzéstervek keresése a nyilvántartásban: Edzéstervek dokumentum könyvtárban elnevezés szerint (Gym center alkalmazottak végzik).
+
 -	Táplálkozási tanácsok keresése a nyilvántartásban: Táplálkozási tanácsok dokumentum könyvtárban elnevezés szerint (Gym center alkalmazottak végzik).
+
 -	Tagság megszűnése: A tásági kártyán rögzített lejárati dátummal megszűnik a tagság => a recepciónál munkát végző alkalmazott deaktiválja a sorszámát => lokális adatbázisban módosítja a jogosultságot (lejárt tagság).
+
 -	Tagsági díj megújítása: A recepciónál munkát végző alkalmazott új tagsági kártyát állít ki => lokális adatbázisban módosítja a jogosultságot (érvényes tagság) és rögzíti a bérlet lejárati dátumát.
 
-## 5. Igényelt üzleti folyamatok modellje
+## 4. Igényelt üzleti folyamatok modellje
 Üzleti folyamatok: 
 
 Online folyamatok vendég(felhasználó) számára:
@@ -310,6 +304,25 @@ B-->C;
 C-->D;
 D-->E;
 ```
+## 5. A rendszerre vonatkozó szabályok
+ - General Data Protection Regulation (Általános adatvédelmi rendelet).
+           Adatkezelési tájékoztató.
+ 
+ - Szerzői jogi törvény (http://www.sztnh.gov.hu/hu/szakmai-oldalak/jogforrasok-0 )
+
+ - Polgári törvénykönyv (http://uvegkep.hu/ptk.pdf )
+ 
+ **Európai uniós rendeletek, irányelvek, ajánlások**
+
+ AZ EURÓPAI PARLAMENT ÉS A TANÁCS (EU) 2019/790 IRÁNYELVE (2019. április 17.)* a digitális egységes piacon a szerzői és szomszédos jogokról, valamint a 96/9/EK és a 2001/29/EK irányelv módosításáról
+
+*AZ EURÓPAI PARLAMENT ÉS A TANÁCS (EU) 2016/679 RENDELETE (2016. április 27.)* a természetes személyeknek a személyes adatok kezelése tekintetében történő védelméről és az ilyen adatok szabad áramlásáról,
+
+*2014/26/EU európai parlamenti és tanácsi irányelv* a szerzői és szomszédos jogokra vonatkozó közös jogkezelésről és a zeneművek belső piacon történő online felhasználásának több területre kiterjedő hatályú engedélyezéséről szóló 2014. február 26-i A Bizottság 2012/417/EU (2012. július 17.) ajánlása a tudományos információkhoz való hozzáférésről és azok megőrzéséről
+
+*2012/417/EU (2012. július 17.)* ajánlása a tudományos információkhoz való hozzáférésről és azok megőrzéséről;
+
+*96/9/EK irányelv* (1996. március 11.) az adatbázisok jogi védelméről
 
 ## 6. Követelménylista
 
