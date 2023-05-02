@@ -3,23 +3,23 @@ import React from 'react'
 
 export default function Navbar() {
   return (
-    <nav className="nav">
-      <Link to="/" className="site-title">
+    <nav className="p-4 flex shadow text-white bg-transparent ">
+      <Link to="/" className="text-2xl font-bold">
         Gym Center
       </Link>
-      <ul>
-        <CustomLink to="/gallery">Galéria</CustomLink>
-        <CustomLink to="/video">Videók</CustomLink>
-        <CustomLink to="/pricing">Árlista</CustomLink>
-        <CustomLink to="/diet">Étrendek</CustomLink>
-        <CustomLink to="/workout">Edzéstervek</CustomLink>
-        <CustomLink to="/news">Hírek</CustomLink>
-        <CustomLink to="/about">Rólunk</CustomLink>
-        <CustomLink to="/login">Belépés</CustomLink>
-        <CustomLink to="/register">Regisztráció</CustomLink>
-        <CustomLink to="/logout">Kijelentkezés</CustomLink>
-        <CustomLink to="/users">Felhasználók</CustomLink>
-        <CustomLink to="/employees">Alkalmazottak</CustomLink>
+      <ul className="font-bold flex">
+        <CustomLink className="m-2 flex" to="/gallery">Galéria</CustomLink>
+        <CustomLink className="m-2 flex" to="/video">Videók</CustomLink>
+        <CustomLink className="m-2 flex" to="/pricing">Árlista</CustomLink>
+        <CustomLink className="m-2 flex" to="/diet">Étrendek</CustomLink>
+        <CustomLink className="m-2 flex" to="/workout">Edzéstervek</CustomLink>
+        <CustomLink className="m-2 flex" to="/news">Hírek</CustomLink>
+        <CustomLink className="m-2 flex" to="/about">Rólunk</CustomLink>        
+        <CustomLink className="m-2 flex" to="/register">Regisztráció</CustomLink>        
+        <CustomLink className="m-2 flex" to="/users">Felhasználók</CustomLink>
+        <CustomLink className="m-2 flex" to="/employees">Alkalmazottak</CustomLink>
+        <CustomLink className="m-2 flex" to="/login">Belépés</CustomLink>
+        <CustomLink className="m-2 flex" to="/logout">Kijelentkezés</CustomLink>
       </ul>
         
     </nav>
