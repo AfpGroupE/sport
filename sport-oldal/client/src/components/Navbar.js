@@ -9,9 +9,19 @@ export default function Navbar() {
       </Link>
       <ul>
         <CustomLink to="/gallery">Galéria</CustomLink>
+        <CustomLink to="/video">Videók</CustomLink>
         <CustomLink to="/pricing">Árlista</CustomLink>
+        <CustomLink to="/diet">Étrendek</CustomLink>
+        <CustomLink to="/workout">Edzéstervek</CustomLink>
+        <CustomLink to="/news">Hírek</CustomLink>
         <CustomLink to="/about">Rólunk</CustomLink>
+        <CustomLink to="/login">Belépés</CustomLink>
+        <CustomLink to="/register">Regisztráció</CustomLink>
+        <CustomLink to="/logout">Kijelentkezés</CustomLink>
+        <CustomLink to="/users">Felhasználók</CustomLink>
+        <CustomLink to="/employees">Alkalmazottak</CustomLink>
       </ul>
+        
     </nav>
   )
 }
