@@ -51,7 +51,262 @@ Tesztelés:
 
 - A prototipus bemutatása
 - Az elkészült szoftver átadása 
+
+## 3 Üzleti folyamatok modellje
+
+### 3.1 Üzleti szereplők
+Regisztráció nélkül a bejelentkező olal elérése biztosított. Regisztrált felhasználó lehet normál felhasználó és lehet admin jogosult is. Adminisztrátor jogosult fel tud tölteni file okat a normál felhasználóval ellentétben. Tobábbá regisztrációhoz, felhasználók kezeléséhez is szükséges az admin jogosultság.
+
+### 3.2 Üzleti folyamatok
+A bejelentkezés minden felhasználó számára azonos helyen érhető el. Bejelentkezést követően a jogosultságoknak megfelelően jelenik meg a menürendszer. 
+Sikertelen bejelentkezést hibaüzenet követ.
+
+Az adminisztrátori jogosultsággal rendelkezők elérnek minden olyan funkciót, melyet a sportolók is.
+Felhasználó regisztrációja a rendszerben:
+
+Regisztrációhoz szükséges adatok:
+
+||Sportoló||
+|-|---------|-|
+||Felhasználó név||
+||Családi név||
+||Keresztnév||
+||Jelszó||
+||Születési dátum||
+||Regisztrációs dátum||
+||E-mail cím||
+||Személyi igazolvány szám||
+
+||Dolgozó||
+|-|---------|-|
+||Felhasználó név||
+||Családi név||
+||Keresztnév||
+||Jelszó||
+||Születési dátum||
+||Regisztrációs dátum||
+||E-mail cím||
+||Személyi igazolvány szám||
+
+Új vendég felvitele
+```mermaid
+flowchart TD;
+A("*Alkalmazott* jogosultsággal belépés");
+B("Vendégek nyilvántartása menü");
+C("Új vendég menü");
+D("Adatok megadása");
+E("Véglegesítés");
+A-->B;
+B-->C;
+C-->D;
+D-->E;
+```
+
+Vendégek adatainak módosítása
+```mermaid
+flowchart TD;
+A("*Alkalmazott* jogosultsággal belépés");
+B("Vendégek nyilvántartása menü");
+C("Vendégek listája menü");
+D("Vendég neve melletti szerkesztés gombra kattintás");
+E("Adatok megadása");
+F("véglegesítés");
+A-->B;
+B-->C;
+C-->D;
+D-->E;
+E-->F;
+```
+
+Vendégek adatainak módosítása 2.
+```mermaid
+flowchart TD;
+A("*Alkalmazott* jogosultsággal belépés");
+B("Vendégek nyilvántartása menü");
+C("Vendégek keresése menü");
+D("Adatok megadása");
+E("vendég neve melletti szerkesztés gombra kattintás");
+F("Adatok megadása");
+G("Véglegesítés");
+A-->B;
+B-->C;
+C-->D;
+D-->E;
+E-->F;
+F-->G;
+```
+
+Vendégek adatainak törlése
+```mermaid
+flowchart TD;
+A("*Alkalmazott* jogosultsággal belépés");
+B("Vendégek nyilvántartása menü");
+C("Vendégek listája menü");
+D("Vendég neve melletti törlés gombra kattintás");
+E("Megerősítés");
+F("Adatok megadása");
+G("Véglegesítés");
+A-->B;
+B-->C;
+C-->D;
+D-->E;
+E-->F;
+F-->G;
+```
+
+Vendégek adatainak törlése 2.
+```mermaid
+flowchart TD;
+A("*Alkalmazott* jogosultsággal belépés");
+B("Vendégek nyilvántartása menü");
+C("Vendégek keresése menü");
+D("Vendég neve melletti törlés gombra kattintás");
+E("Megerősítés");
+A-->B;
+B-->C;
+C-->D;
+D-->E;
+```
+
+Vendégek adatainak böngészése
+```mermaid
+flowchart TD;
+A("*Alkalmazott* jogosultsággal belépés");
+B("Vendégek nyilvántartása menü");
+C("vendégek listája menü");
+A-->B;
+B-->C;
+```
+
+Vendégek adatainak böngészése kereséssel
+```mermaid
+flowchart TD;
+A("*Alkalmazott* jogosultsággal belépés");
+B("Vendégek keresése menü");
+C("Adatok megadása");
+A-->B;
+B-->C;
+```
+
+Új hír felvitele
+```mermaid
+flowchart TD;
+A("*Alkalmazott* jogosultsággal belépés");
+B("Hírek felvitele menü");
+C("Adatok megadása");
+D("Véglegesítés");
+A-->B;
+B-->C;
+C-->D;
+```
+
+Hírek böngészése, szerkesztése
+```mermaid
+flowchart TD;
+A("*Alkalmazott* jogosultsággal belépés");
+B("Hírek menü");
+C("Hírek bejegyzései alatt szerkesztés gombra kattintás");
+D("Adatok módosítása, megadása");
+E("Véglegesítés")
+A-->B;
+B-->C;
+C-->D;
+D-->E;
+```
+
+Hírek törlése
+```mermaid
+flowchart TD;
+A("*Alkalmazott* jogosultsággal belépés");
+B("Hírek menü");
+C("Hírek bejegyzései alatt törlés gombra kattintás");
+D("Megerősítés");
+A-->B;
+B-->C;
+C-->D;
+```
+
+Online folyamatok adminisztrátorok számára:
+Az adminisztrátorok minden menüpontot és funkciót elérhetnek, amit a vendégek. minden menüpontot és funkciót elérhetnek, amit a vendégek.
+
+Új alkalmazott felvitele
+```mermaid
+flowchart TD;
+A("*Adminisztrátor* jogosultsággal belépés");
+B("Alkalmazottak nyilvántartása menü");
+C("Új alkalmazottak menü");
+D("Adatok megadása");
+E("Véglegesítés")
+A-->B;
+B-->C;
+C-->D;
+D-->E;
+```
+
+Alkalmazott adatainak módosítása
+```mermaid
+flowchart TD;
+A("*Adminisztrátor* jogosultsággal belépés");
+B("Alkalmazottak nyilvántartása menü");
+C("Alkalmazottak listája menü");
+D("Alkalmazott neve melletti szerkesztés gombra kattintás");
+E("Adatok megadása");
+F("Véglegesítés")
+A-->B;
+B-->C;
+C-->D;
+D-->E;
+E-->F;
+```
+
+Alkalmazott adatainak módosítása 2.
+```mermaid
+flowchart TD;
+A("*Adminisztrátor* jogosultsággal belépés");
+B("Alkalmazottak nyilvántartása menü");
+C("alkalmazottak keresése menü");
+D("Adatok megadása");
+E("Alkalmazott neve melletti szerkesztés gombra kattintás");
+F("Adatok megadása");
+G("Véglegesítés")
+A-->B;
+B-->C;
+C-->D;
+D-->E;
+E-->F;
+F-->G;
+```
+
+Alkalmazott adatainak törlése
+```mermaid
+flowchart TD;
+A("*Adminisztrátor* jogosultsággal belépés");
+B("Alkalmazottak nyilvántartása menü");
+C("Alkalmazottak listája menü");
+D("Alkalmazott neve melletti törlés gombra kattintás");
+E("Megerősítés");
+A-->B;
+B-->C;
+C-->D;
+D-->E;
+```
+
+Alkalmazott adatainak törlése 2.
+```mermaid
+flowchart TD;
+A("*Adminisztrátor* jogosultsággal belépés");
+B("Alkalmazottak nyilvántartása menü");
+C("Alkalmazottak keresése menü");
+D("Alkalmazott neve melletti törlés gombra kattintás");
+E("Megerősítés");
+A-->B;
+B-->C;
+C-->D;
+D-->E;
+```
+
 ## 5 Funkcionális Terv
+
 
 ### 5.1 Rendszer szereplői
 
