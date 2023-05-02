@@ -1,4 +1,6 @@
-export default function About() {
+import React from 'react'
+
+export default function Gallery() {
     return (
         <div>
             <h1>Galéria</h1>

@@ -1,5 +1,5 @@
 import Navbar from "./Navbar"
-import Galery from "./pages/Galery"
+import Gallery from "./pages/Gallery"
 import Pricing from "./pages/Pricing"
 import Home from "./pages/Home"
 import About from "./pages/About"
@@ -26,7 +26,7 @@ fetch("/api").then(
     <div className="container">
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/galery" element={<Galery />} />
+        <Route path="/gallery" element={<Gallery />} />
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/about" element={<About />} />
       </Routes>
