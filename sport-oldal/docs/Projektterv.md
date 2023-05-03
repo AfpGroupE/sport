@@ -55,38 +55,68 @@ Tesztelés:
 ## 3 Üzleti folyamatok modellje
 
 ### 3.1 Üzleti szereplők
-Regisztráció nélkül a bejelentkező olal elérése biztosított. Regisztrált felhasználó lehet normál felhasználó és lehet admin jogosult is. Adminisztrátor jogosult fel tud tölteni file okat a normál felhasználóval ellentétben. Tobábbá regisztrációhoz, felhasználók kezeléséhez is szükséges az admin jogosultság.
+
+A weboldalt azon sportolók használhatják ingyenesen, akik a megrendelő által üzemeltetett fittnesz terembe
+érvényes bérlete van. Azoknak, akiknek nincs érvényes bérlete azoknak fizetni kell, ha meg szeretnék tekinteni a weboldal tartalmát.
 
 ### 3.2 Üzleti folyamatok
-A bejelentkezés minden felhasználó számára azonos helyen érhető el. Bejelentkezést követően a jogosultságoknak megfelelően jelenik meg a menürendszer. 
-Sikertelen bejelentkezést hibaüzenet követ.
+Regisztráció nélkül a bejelentkező olal elérése biztosított. Regisztrált felhasználó lehet normál felhasználó és lehet admin jogosult is. Adminisztrátor jogosult fel tud tölteni file okat a normál felhasználóval ellentétben. 
+Tobábbá regisztrációhoz, felhasználók kezeléséhez is szükséges az admin jogosultság.
+A weboldalra való belépés egy klasszikus login funkción keresztül történik. Szükséges egy felhasználónév illetve egy jelszó megadása.
+Amennyiben ez sikeres akkor, a felhasználó belép a weboldalra ellenkező esetben a belépés sikertelen. Sikertelen bejelentkezést hibaüzenet követ.
+A bejelentkezés minden felhasználó számára azonos helyen érhető el. 
+A belépés után megjelenik a weboldal tartalma ahol a felhasználó megtekintheti a kívánt tartalmat.
+Bejelentkezést követően a jogosultságoknak megfelelően jelenik meg a menürendszer. 
 
-Az adminisztrátori jogosultsággal rendelkezők elérnek minden olyan funkciót, melyet a sportolók is.
+Azon felhasználók (dolgozók), akiknek van jogosultsága új tagot regisztrálni az adatbázisba annak egy bővitett funkcióval ellátott oldal jelenik meg.
+
 Felhasználó regisztrációja a rendszerben:
 
 Regisztrációhoz szükséges adatok:
 
-||Sportoló||
+||User||
 |-|---------|-|
-||Felhasználó név||
-||Családi név||
-||Keresztnév||
-||Jelszó||
-||Születési dátum||
-||Regisztrációs dátum||
-||E-mail cím||
-||Személyi igazolvány szám||
+||User_Szem_Szam||
+||User_Csalad_Nev||
+||User_Utonev||
+||User_Utonev2||
+||User_Szul_Ido||
+||User_Felhasznalo_nev||
+||E-mail||
+||Jelszo||
+||Reg_Datum||
+||User_Role||
 
-||Dolgozó||
+Szöveges tartalom tárolásához szükséges adatok:
+
+||Szoveg||
 |-|---------|-|
-||Felhasználó név||
-||Családi név||
-||Keresztnév||
-||Jelszó||
-||Születési dátum||
-||Regisztrációs dátum||
-||E-mail cím||
-||Személyi igazolvány szám||
+||idSzoveg||
+||Szoveg_cim||
+||Tartalom||
+||Szoveg_feltolt_ideje||
+||User_idUser||
+
+Kép tartalom tárolásához szükséges adatok:
+
+||Kep||
+|-|---------|-|
+||idKep||
+||Kepnev||
+||Kep_Feltoltes_Ideje||
+||User_idUser||
+||Szoveg_idSzoveg||
+
+Videó tartalom tárolásához szükséges adatok:
+
+||Video||
+|-|---------|-|
+||idVideo||
+||Videonev||
+||Video_Feltoltes_Ideje||
+||Video_link||
+||User_idUser||
+||Szoveg_idSzoveg||
 
 Új vendég felvitele
 ```mermaid
@@ -304,6 +334,11 @@ B-->C;
 C-->D;
 D-->E;
 ```
+## 4. Követelmények
+
+### 4.1 Funkcionális követelmények  
+
+### 4.2 Nemfunkcionális követelmények  
 
 ## 5 Funkcionális Terv
 
