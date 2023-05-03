@@ -338,6 +338,12 @@ D-->E;
 
 ### 4.1 Funkcionális követelmények  
 
+Sportolóra vonatkozó követelmények:
+	A sportolónak lehetősége van elérni az oldal tartalmát bejelentkezést követően. Előzetesen minden sportolót regisztrálni kell a rendszerben. Regisztrációt csak admin jogosultságú user hajthat végre. A sportoló nem szerkeszthet, törölhet és nem tölthet fel tartalmat. A sportoló nem láthatja a többi felhasználó adatait. Nem férhet hozzá a felhasználók listájához.
+	
+Dolgozóra vonatkozó követelmények:
+	A dolgozó az oldal tartalmát szintén bejelentkezést követően tudja elérni. A dolgozók admin jogosultságot kapnak, így tudnak új felhasználókat regisztrálni, törölni, módosítani. Továbbá nekik van lehetőségük az oldal tartalmának a szerkesztéséhez. A dolgozók láthatják a regisztrált felhasználók listáját.
+	
 ### 4.2 Nemfunkcionális követelmények  
 
 ## 5 Funkcionális Terv
