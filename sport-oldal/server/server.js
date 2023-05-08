@@ -4,17 +4,16 @@ const express = require('express')
 const app = express()
 const pool = require('./db')
 
-/* Ez a teszt script
 app.get("/", (req, res) => {
-    res.send("Hello Afp 2-es csoport")
+  res.send("Hello Afp 2-es csoport")
 })
-*/
+
 // get all adatbázis dolgok
 
-app.get('/applikacio') , async (req, res) => {
+app.get('/users') , async (req, res) => {
     try {
-        const felhasznalok = await pool.query('SELECT * FROM Users');
-        res.json(applikacio.rows)
+        const felhasznalok = await pool.query('SELECT * FROM users');
+        res.json(felhasznalok.rows)
     } catch (err) {
         console.error(error)
     }

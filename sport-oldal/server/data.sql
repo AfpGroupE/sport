@@ -1,18 +1,18 @@
 CREATE DATABASE applikacio;
 
-CREATE TABLE IF NOT EXISTS Users (
-  idUser Serial,
-  User_Szem_Szam VARCHAR(20) NOT NULL,
-  User_Nev VARCHAR(100) NOT NULL,
-  User_Szul_Ido DATE NOT NULL,
-  User_Felhasznalo_nev VARCHAR(10) NOT NULL,
-  Jelszo VARCHAR(25) NOT NULL,
+CREATE TABLE IF NOT EXISTS users (
+  iduser Serial,
+  user_Szem_Szam VARCHAR(20) NOT NULL,
+  user_Nev VARCHAR(100) NOT NULL,
+  user_szul_ido DATE NOT NULL,
+  user_felhasznalo_nev VARCHAR(10) NOT NULL,
+  jelszo VARCHAR(25) NOT NULL,
   e_mail VARCHAR(25) NOT NULL,
-  Reg_Datum DATE NOT NULL,
-  User_Role INT NOT NULL,
-  PRIMARY KEY (idUser),
-  UNIQUE (idUser),
-  UNIQUE (User_Szem_Szam));
+  reg_datum DATE NOT NULL,
+  user_role INT NOT NULL,
+  PRIMARY KEY (iduser),
+  UNIQUE (iduser),
+  UNIQUE (user_szem_szam));
 
 CREATE TABLE IF NOT EXISTS Szoveg (
   idSzoveg Serial,
