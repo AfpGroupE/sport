@@ -3,11 +3,11 @@ require('dotenv').config()
 
 const pool = new Pool({
     
-    user: 'afpCsoport',
-    password: '',
+    user: 'postgres',
+    password: 'Server',
     host: 'localhost',
     port: 5432,
-    database: 'todoapp'
+    database: 'applikacio'
  }
 )
 module.exports = pool

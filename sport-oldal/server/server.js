@@ -10,7 +10,7 @@ app.get("/", (req, res) => {
 */
 // get all adatbázis dolgok
 
-app.get('/app') , (req, res) => {
+app.get('/applikacio') , (req, res) => {
     try {
         
     } catch (err) {
