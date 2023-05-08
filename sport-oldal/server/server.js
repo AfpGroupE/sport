@@ -1,7 +1,8 @@
-const PORT = process.env.PORT ?? 8000
+const PORT = 5000 ?? 8000
 
 const express = require('express')
 const app = express()
+const pool = require('./db')
 
 /* Ez a teszt script
 app.get("/", (req, res) => {
@@ -10,9 +11,10 @@ app.get("/", (req, res) => {
 */
 // get all adatbázis dolgok
 
-app.get('/applikacio') , (req, res) => {
+app.get('/applikacio') , async (req, res) => {
     try {
-        
+        const felhasznalok = await pool.query('SELECT * FROM Users');
+        res.json(applikacio.rows)
     } catch (err) {
         console.error(error)
     }
