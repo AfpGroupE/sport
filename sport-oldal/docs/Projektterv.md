@@ -51,7 +51,303 @@ Tesztelés:
 
 - A prototipus bemutatása
 - Az elkészült szoftver átadása 
+
+## 3 Üzleti folyamatok modellje
+
+### 3.1 Üzleti szereplők
+
+A weboldalt azon sportolók használhatják ingyenesen, akik a megrendelő által üzemeltetett fittnesz terembe
+érvényes bérlete van. Azoknak, akiknek nincs érvényes bérlete azoknak fizetni kell, ha meg szeretnék tekinteni a weboldal tartalmát.
+
+### 3.2 Üzleti folyamatok
+Regisztráció nélkül a bejelentkező olal elérése biztosított. Regisztrált felhasználó lehet normál felhasználó és lehet admin jogosult is. Adminisztrátor jogosult fel tud tölteni file okat a normál felhasználóval ellentétben. 
+Tobábbá regisztrációhoz, felhasználók kezeléséhez is szükséges az admin jogosultság.
+A weboldalra való belépés egy klasszikus login funkción keresztül történik. Szükséges egy felhasználónév illetve egy jelszó megadása.
+Amennyiben ez sikeres akkor, a felhasználó belép a weboldalra ellenkező esetben a belépés sikertelen. Sikertelen bejelentkezést hibaüzenet követ.
+A bejelentkezés minden felhasználó számára azonos helyen érhető el. 
+A belépés után megjelenik a weboldal tartalma ahol a felhasználó megtekintheti a kívánt tartalmat.
+Bejelentkezést követően a jogosultságoknak megfelelően jelenik meg a menürendszer. 
+
+Azon felhasználók (dolgozók), akiknek van jogosultsága új tagot regisztrálni az adatbázisba annak egy bővitett funkcióval ellátott oldal jelenik meg.
+
+Felhasználó regisztrációja a rendszerben:
+
+Regisztrációhoz szükséges adatok:
+
+||User||
+|-|---------|-|
+||User_Szem_Szam||
+||User_Csalad_Nev||
+||User_Utonev||
+||User_Utonev2||
+||User_Szul_Ido||
+||User_Felhasznalo_nev||
+||E-mail||
+||Jelszo||
+||Reg_Datum||
+||User_Role||
+
+Szöveges tartalom tárolásához szükséges adatok:
+
+||Szoveg||
+|-|---------|-|
+||idSzoveg||
+||Szoveg_cim||
+||Tartalom||
+||Szoveg_feltolt_ideje||
+||User_idUser||
+
+Kép tartalom tárolásához szükséges adatok:
+
+||Kep||
+|-|---------|-|
+||idKep||
+||Kepnev||
+||Kep_Feltoltes_Ideje||
+||User_idUser||
+||Szoveg_idSzoveg||
+
+Videó tartalom tárolásához szükséges adatok:
+
+||Video||
+|-|---------|-|
+||idVideo||
+||Videonev||
+||Video_Feltoltes_Ideje||
+||Video_link||
+||User_idUser||
+||Szoveg_idSzoveg||
+
+Új vendég felvitele
+```mermaid
+flowchart TD;
+A("*Alkalmazott* jogosultsággal belépés");
+B("Vendégek nyilvántartása menü");
+C("Új vendég menü");
+D("Adatok megadása");
+E("Véglegesítés");
+A-->B;
+B-->C;
+C-->D;
+D-->E;
+```
+
+Vendégek adatainak módosítása
+```mermaid
+flowchart TD;
+A("*Alkalmazott* jogosultsággal belépés");
+B("Vendégek nyilvántartása menü");
+C("Vendégek listája menü");
+D("Vendég neve melletti szerkesztés gombra kattintás");
+E("Adatok megadása");
+F("véglegesítés");
+A-->B;
+B-->C;
+C-->D;
+D-->E;
+E-->F;
+```
+
+Vendégek adatainak módosítása 2.
+```mermaid
+flowchart TD;
+A("*Alkalmazott* jogosultsággal belépés");
+B("Vendégek nyilvántartása menü");
+C("Vendégek keresése menü");
+D("Adatok megadása");
+E("vendég neve melletti szerkesztés gombra kattintás");
+F("Adatok megadása");
+G("Véglegesítés");
+A-->B;
+B-->C;
+C-->D;
+D-->E;
+E-->F;
+F-->G;
+```
+
+Vendégek adatainak törlése
+```mermaid
+flowchart TD;
+A("*Alkalmazott* jogosultsággal belépés");
+B("Vendégek nyilvántartása menü");
+C("Vendégek listája menü");
+D("Vendég neve melletti törlés gombra kattintás");
+E("Megerősítés");
+F("Adatok megadása");
+G("Véglegesítés");
+A-->B;
+B-->C;
+C-->D;
+D-->E;
+E-->F;
+F-->G;
+```
+
+Vendégek adatainak törlése 2.
+```mermaid
+flowchart TD;
+A("*Alkalmazott* jogosultsággal belépés");
+B("Vendégek nyilvántartása menü");
+C("Vendégek keresése menü");
+D("Vendég neve melletti törlés gombra kattintás");
+E("Megerősítés");
+A-->B;
+B-->C;
+C-->D;
+D-->E;
+```
+
+Vendégek adatainak böngészése
+```mermaid
+flowchart TD;
+A("*Alkalmazott* jogosultsággal belépés");
+B("Vendégek nyilvántartása menü");
+C("vendégek listája menü");
+A-->B;
+B-->C;
+```
+
+Vendégek adatainak böngészése kereséssel
+```mermaid
+flowchart TD;
+A("*Alkalmazott* jogosultsággal belépés");
+B("Vendégek keresése menü");
+C("Adatok megadása");
+A-->B;
+B-->C;
+```
+
+Új hír felvitele
+```mermaid
+flowchart TD;
+A("*Alkalmazott* jogosultsággal belépés");
+B("Hírek felvitele menü");
+C("Adatok megadása");
+D("Véglegesítés");
+A-->B;
+B-->C;
+C-->D;
+```
+
+Hírek böngészése, szerkesztése
+```mermaid
+flowchart TD;
+A("*Alkalmazott* jogosultsággal belépés");
+B("Hírek menü");
+C("Hírek bejegyzései alatt szerkesztés gombra kattintás");
+D("Adatok módosítása, megadása");
+E("Véglegesítés")
+A-->B;
+B-->C;
+C-->D;
+D-->E;
+```
+
+Hírek törlése
+```mermaid
+flowchart TD;
+A("*Alkalmazott* jogosultsággal belépés");
+B("Hírek menü");
+C("Hírek bejegyzései alatt törlés gombra kattintás");
+D("Megerősítés");
+A-->B;
+B-->C;
+C-->D;
+```
+
+Online folyamatok adminisztrátorok számára:
+Az adminisztrátorok minden menüpontot és funkciót elérhetnek, amit a vendégek. minden menüpontot és funkciót elérhetnek, amit a vendégek.
+
+Új alkalmazott felvitele
+```mermaid
+flowchart TD;
+A("*Adminisztrátor* jogosultsággal belépés");
+B("Alkalmazottak nyilvántartása menü");
+C("Új alkalmazottak menü");
+D("Adatok megadása");
+E("Véglegesítés")
+A-->B;
+B-->C;
+C-->D;
+D-->E;
+```
+
+Alkalmazott adatainak módosítása
+```mermaid
+flowchart TD;
+A("*Adminisztrátor* jogosultsággal belépés");
+B("Alkalmazottak nyilvántartása menü");
+C("Alkalmazottak listája menü");
+D("Alkalmazott neve melletti szerkesztés gombra kattintás");
+E("Adatok megadása");
+F("Véglegesítés")
+A-->B;
+B-->C;
+C-->D;
+D-->E;
+E-->F;
+```
+
+Alkalmazott adatainak módosítása 2.
+```mermaid
+flowchart TD;
+A("*Adminisztrátor* jogosultsággal belépés");
+B("Alkalmazottak nyilvántartása menü");
+C("alkalmazottak keresése menü");
+D("Adatok megadása");
+E("Alkalmazott neve melletti szerkesztés gombra kattintás");
+F("Adatok megadása");
+G("Véglegesítés")
+A-->B;
+B-->C;
+C-->D;
+D-->E;
+E-->F;
+F-->G;
+```
+
+Alkalmazott adatainak törlése
+```mermaid
+flowchart TD;
+A("*Adminisztrátor* jogosultsággal belépés");
+B("Alkalmazottak nyilvántartása menü");
+C("Alkalmazottak listája menü");
+D("Alkalmazott neve melletti törlés gombra kattintás");
+E("Megerősítés");
+A-->B;
+B-->C;
+C-->D;
+D-->E;
+```
+
+Alkalmazott adatainak törlése 2.
+```mermaid
+flowchart TD;
+A("*Adminisztrátor* jogosultsággal belépés");
+B("Alkalmazottak nyilvántartása menü");
+C("Alkalmazottak keresése menü");
+D("Alkalmazott neve melletti törlés gombra kattintás");
+E("Megerősítés");
+A-->B;
+B-->C;
+C-->D;
+D-->E;
+```
+## 4. Követelmények
+
+### 4.1 Funkcionális követelmények  
+
+Sportolóra vonatkozó követelmények:
+	A sportolónak lehetősége van elérni az oldal tartalmát bejelentkezést követően. Előzetesen minden sportolót regisztrálni kell a rendszerben. Regisztrációt csak admin jogosultságú user hajthat végre. A sportoló nem szerkeszthet, törölhet és nem tölthet fel tartalmat. A sportoló nem láthatja a többi felhasználó adatait. Nem férhet hozzá a felhasználók listájához.
+	
+Dolgozóra vonatkozó követelmények:
+	A dolgozó az oldal tartalmát szintén bejelentkezést követően tudja elérni. A dolgozók admin jogosultságot kapnak, így tudnak új felhasználókat regisztrálni, törölni, módosítani. Továbbá nekik van lehetőségük az oldal tartalmának a szerkesztéséhez. A dolgozók láthatják a regisztrált felhasználók listáját.
+	
+### 4.2 Nemfunkcionális követelmények  
+
 ## 5 Funkcionális Terv
+
 
 ### 5.1 Rendszer szereplői
 
