@@ -50,7 +50,7 @@ fetch("/api").then(
         <Route path="/employees" element={<Employees />} />
       </Routes>
     </div>
-    <div>
+    {/* <div>
         {(typeof backendData.users === 'undefined') ? (
           <p>Loading...</p>
         ): (
@@ -58,7 +58,7 @@ fetch("/api").then(
               <p key={i}>{user}</p>
             ))
         )}        
-    </div>
+    </div> */}
     <Footer/>
   </>
 
