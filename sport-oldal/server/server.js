@@ -37,7 +37,7 @@ app.get("/api/v1/getalluser", async (req,res) => {
 })
 
 //visszaad egy usert
-app.get("/api/v1/user/:id", async (req,res) => {
+app.get("/api/v1/oneuser/:id", async (req,res) => {
     console.log(req.params.id);
     try {
         const result = await pool.query(
@@ -83,7 +83,7 @@ try {
 
 // update user
 
-app.put("/api/v1/users/:id", async (req,res) => {
+app.put("/api/v1/updateuser/:id", async (req,res) => {
     try {
         const update = await pool.query(
             "UPDATE users SET user_Szem_Szam = $1,user_Nev = $2,user_szul_ido = $3,user_felhasznalo_nev = $4,jelszo = $5,e_mail = $6,reg_datum = $7,user_role = $8 where id = $10 returning *",
@@ -104,7 +104,7 @@ app.put("/api/v1/users/:id", async (req,res) => {
     
 });
 
-app.delete("/api/v1/users/:id", async (req,res) => {
+app.delete("/api/v1/delusers/:id", async (req,res) => {
     try {
         const result = await pool.query("DELETE FROM users where iduser = $1 ", [req.params.id]);
         res.status(204).json({
