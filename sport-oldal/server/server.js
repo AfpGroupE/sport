@@ -22,14 +22,10 @@ app.get("/api/v1/getalluser", async (req,res) => {
     try {
         const result = await pool.query("SELECT * FROM users;")
         console.log(result);
-        res.status(200).json({
-        status: "siker",
-        result: result.rows.length,
-        data: {
-            users : result.rows,
-        }
+        res.status(200).json(
+        result.rows
         
-    })
+    )
     } catch (err) {
         console.log(err);
     }
@@ -58,27 +54,20 @@ app.get("/api/v1/oneuser/:id", async (req,res) => {
 // új felhasználó hozzáadaása az adatbázishoz
 
 app.post("/api/v1/adduser", async (req, res) => {
-
-    console.log(req.body);
     
-try {
+    var date_time = new Date();
+    console.log(date_time);
     const newUser = await pool.query(
-        "INSERT INTO users (user_Szem_Szam ,user_Nev ,user_szul_ido ,user_felhasznalo_nev ,jelszo ,e_mail ,reg_datum ,user_role ) VALUES ($1,$2,$3,$4,$5,$6,$7,$8) returning *" , [req.body.userSzemSzam, 
+        "INSERT INTO users (user_Szem_Szam ,user_Nev ,user_szul_ido ,user_felhasznalo_nev ,jelszo ,e_mail ,reg_datum ,user_role ) VALUES ($1,$2,$3,$4,$5,$6,$7,$8)" , 
+            [req.body.userSzemSzam, 
             req.body.user_Nev, req.body.user_szul_ido,
-            req.user_felhasznalo_nev,req.body.jelszo,
-            req.body.e_mail,req.body.reg_datum,
+            req.body.user_felhasznalo_nev,req.body.jelszo,
+            req.body.e_mail,date_time,
             req.body.user_role]);
-    console.log(newUser)
     res.status(201).json({
-        status: "siker",
-        data: {
-            user: newUser.rows[0],
-        },
+        status: date_time
     });
     
-} catch (err) {
-    console.log(err.message)
-}
 })
 
 // update user
@@ -114,6 +103,39 @@ app.delete("/api/v1/delusers/:id", async (req,res) => {
         console.log(err.message)
     }
     
+})
+
+app.post("/api/v1/addtext", async (req, res) => {
+    console.log(req.body);
+    var date_time = new Date();
+try {
+    const userid = 1;
+    const ujSzoveg = await  pool.query(
+        "INSERT INTO szoveg (szoveg_cim ,tartalom ,szoveg_feltolt_ideje ,user_iduser ) VALUES ($1,$2,$3,$4)" , [
+            req.body.szoveg, req.body.tartalom, date_time, userid]);
+            res.status(201).json({
+                status: date_time
+            })
+} catch (err) {
+    console.log(err.message)
+}
+})
+
+app.post("/api/v1/addvideo", async (req, res) => {
+    console.log(req.body);
+    var date_time = new Date();
+try {
+    const userid = 1;
+    const szovegid = 2;
+    const ujSzoveg = await  pool.query(
+        "INSERT INTO video (videonev ,videonev , video_feltoltes_ideje , video_link, user_iduser, szoveg_idszoveg ) VALUES ($1,$2,$3,$4,$5,$6)" , [
+            req.body.videonev, req.body.vieonev, date_time, req.body.video_link, userid, szovegid]);
+            res.status(201).json({
+                status: date_time
+            })
+} catch (err) {
+    console.log(err.message)
+}
 })
 
 app.listen(PORT, ()=> console.log( `server started on port ${PORT}`))

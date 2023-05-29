@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS Video (
   Video_link VARCHAR(45) NOT NULL,
   User_idUser INT NOT NULL,
   Szoveg_idSzoveg INT NOT NULL,
-  PRIMARY KEY (idVideo, User_idUser),
+  PRIMARY KEY (idVideo, User_idUser,),
   UNIQUE (idVideo),
   CONSTRAINT fk_Video_User1
     FOREIGN KEY (User_idUser)
