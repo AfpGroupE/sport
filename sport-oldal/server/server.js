@@ -16,7 +16,7 @@ app.get("/", (req, res) => {
   res.send("Hello Afp 2-es csoport");
   
 })
-//visszaadja az összes usert aki az adatbázisban van
+//visszaadja az összes usert aki az adatbázisban van // müködik, tesztelte: Lecza Tamás 05.29
 
 app.get("/api/v1/getalluser", async (req,res) => {
     try {
@@ -32,26 +32,23 @@ app.get("/api/v1/getalluser", async (req,res) => {
     
 })
 
-//visszaad egy usert
+//visszaad egy usert, müködik, tesztelte: Lecza Tamás 05.29
 app.get("/api/v1/oneuser/:id", async (req,res) => {
     console.log(req.params.id);
     try {
         const result = await pool.query(
             "SELECT * FROM users where iduser = $1 ", [req.params.id]);
 
-            res.status(200).json({
-                status: "siker",
-                data: {
-                    user: result.rows[0],
-                },
-            });
+            res.status(200).json(
+            result.rows[0]
+            );
     } catch (err) {
         console.log(err.message);
     }
     
 })
 
-// új felhasználó hozzáadaása az adatbázishoz
+// új felhasználó hozzáadaása az adatbázishoz müködik: tesztelte: Lecza Tamás 05.29
 
 app.post("/api/v1/adduser", async (req, res) => {
     
@@ -70,7 +67,7 @@ app.post("/api/v1/adduser", async (req, res) => {
     
 })
 
-// update user
+// update user // tesztelni!
 
 app.put("/api/v1/updateuser/:id", async (req,res) => {
     try {
@@ -92,7 +89,7 @@ app.put("/api/v1/updateuser/:id", async (req,res) => {
     }
     
 });
-
+// update user // tesztelni!
 app.delete("/api/v1/delusers/:id", async (req,res) => {
     try {
         const result = await pool.query("DELETE FROM users where iduser = $1 ", [req.params.id]);
@@ -104,7 +101,8 @@ app.delete("/api/v1/delusers/:id", async (req,res) => {
     }
     
 })
-
+// Szöveg apik Hozzáad egy szöveget az adatbázisba !! 
+//Müködik: Lecza Tamás 05.29
 app.post("/api/v1/addtext", async (req, res) => {
     console.log(req.body);
     var date_time = new Date();
@@ -120,7 +118,38 @@ try {
     console.log(err.message)
 }
 })
+// Visszaadja az összes szöveget az adatbázisból 
+// Müködik: Lecza Tamás 05.29
+app.get("/api/v1/getalltext", async (req,res) => {
+    try {
+        const result = await pool.query("SELECT * FROM szoveg;")
+        console.log(result);
+        res.status(200).json(
+        result.rows
+        
+    )
+    } catch (err) {
+        console.log(err);
+    }
+    
+})
 
+//visszaad egy szöveget az adatbázisból, müködik, tesztelte: Lecza Tamás 05.29 
+app.get("/api/v1/onetext/:id", async (req,res) => {
+    console.log(req.params.id);
+    try {
+        const result = await pool.query(
+            "SELECT * FROM szoveg where idSzoveg = $1 ", [req.params.id]);
+            res.status(200).json(
+            result.rows[0]
+            );
+    } catch (err) {
+        console.log(err.message);
+    }
+    
+})
+
+// Video apik szöveggel !!
 app.post("/api/v1/addvideo", async (req, res) => {
     console.log(req.body);
     var date_time = new Date();
