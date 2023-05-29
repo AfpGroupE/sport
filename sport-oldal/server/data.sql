@@ -68,3 +68,31 @@ CREATE TABLE IF NOT EXISTS Kep (
     REFERENCES Szoveg (idSzoveg)
     ON DELETE CASCADE
     ON UPDATE CASCADE);
+
+    CREATE TABLE IF NOT EXISTS Video_Szoveg_Nelkul (
+  idVideo_szoveg_nelkul Serial,
+  videonev_szoveg_nelkul VARCHAR(45) NOT NULL,
+  video_feltoltes_ideje DATE NOT NULL,
+  video_link VARCHAR(45) NOT NULL,
+  user_idUser INT NOT NULL,
+  PRIMARY KEY (idVideo_szoveg_nelkul, user_idUser),
+  UNIQUE (idVideo_szoveg_nelkul),
+  CONSTRAINT fk_Video_User1
+    FOREIGN KEY (user_idUser)
+    REFERENCES users (idUser)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE);
+
+    CREATE TABLE IF NOT EXISTS Kep_Szoveg_Nelkul (
+  idKep_szoveg_nelkul Serial,
+  kepnev_szoveg_nelkul VARCHAR(45) NOT NULL,
+  kep_feltoltes_ideje DATE NOT NULL,
+  kep_link VARCHAR(45) NOT NULL,
+  user_idUser INT NOT NULL,
+  PRIMARY KEY (idKep_szoveg_nelkul, user_idUser),
+  UNIQUE (idKep_szoveg_nelkul),
+  CONSTRAINT fk_Kep_User1
+    FOREIGN KEY (user_idUser)
+    REFERENCES users (idUser)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE);
