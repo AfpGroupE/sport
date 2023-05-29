@@ -248,4 +248,24 @@ app.get("/api/v1/getonevideo/notext/:id", async (req,res) => {
     }
     
 })
+
+// Kép apik szöveggel !! 
+// müködik, tesztelte: Lecza Tamás 05.29 
+app.post("/api/v1/addkep", async (req, res) => {
+    console.log(req.body);
+    var date_time = new Date();
+try {
+    const userid = 1;
+    const szovegid = 2;
+    const ujSzoveg = await  pool.query(
+        "INSERT INTO kep (kepnev, kep_link , kep_feltoltes_ideje, user_iduser, szoveg_idszoveg) VALUES ($1,$2,$3,$4,$5)" , [
+            req.body.kepnev, req.body.kep_link, date_time , userid, szovegid]);
+            res.status(201).json({
+                status: date_time
+            })
+} catch (err) {
+    console.log(err.message)
+}
+})
+
 app.listen(PORT, ()=> console.log( `server started on port ${PORT}`))
