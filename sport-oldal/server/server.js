@@ -183,5 +183,21 @@ app.get("/api/v1/getallvideo", async (req,res) => {
     }
     
 })
+// visszad egy videolinket az adatbázisból 
+// müködik, tesztelte: Lecza Tamás 05.29
+app.get("/api/v1/onevideo/:id", async (req,res) => {
+    console.log(req.params.id);
+    try {
+        const result = await pool.query(
+            "SELECT * FROM video where idvideo = $1 ", [req.params.id]);
+
+            res.status(200).json(
+            result.rows[0]
+            );
+    } catch (err) {
+        console.log(err.message);
+    }
+    
+})
 
 app.listen(PORT, ()=> console.log( `server started on port ${PORT}`))
