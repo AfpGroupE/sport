@@ -149,7 +149,8 @@ app.get("/api/v1/onetext/:id", async (req,res) => {
     
 })
 
-// Video apik szöveggel !! müködik, tesztelte: Lecza Tamás 05.29 
+// Video apik szöveggel !! 
+// müködik, tesztelte: Lecza Tamás 05.29 
 app.post("/api/v1/addvideo", async (req, res) => {
     console.log(req.body);
     var date_time = new Date();
@@ -165,6 +166,22 @@ try {
 } catch (err) {
     console.log(err.message)
 }
+})
+
+// visszaadja az összes videolinket az adatbázisból 
+// müködik, tesztelte: Lecza Tamás 05.29
+app.get("/api/v1/getallvideo", async (req,res) => {
+    try {
+        const result = await pool.query("SELECT * FROM video;")
+        console.log(result);
+        res.status(200).json(
+        result.rows
+        
+    )
+    } catch (err) {
+        console.log(err);
+    }
+    
 })
 
 app.listen(PORT, ()=> console.log( `server started on port ${PORT}`))
