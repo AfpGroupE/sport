@@ -101,7 +101,8 @@ app.delete("/api/v1/delusers/:id", async (req,res) => {
     }
     
 })
-// Szöveg apik !!
+// Szöveg apik Hozzáad egy szöveget az adatbázisba !! 
+//Müködik: Lecza Tamás 05.29
 app.post("/api/v1/addtext", async (req, res) => {
     console.log(req.body);
     var date_time = new Date();
@@ -117,7 +118,8 @@ try {
     console.log(err.message)
 }
 })
-
+// Visszaadja az összes szöveget az adatbázisból 
+// Müködik: Lecza Tamás 05.29
 app.get("/api/v1/getalltext", async (req,res) => {
     try {
         const result = await pool.query("SELECT * FROM szoveg;")
@@ -128,6 +130,21 @@ app.get("/api/v1/getalltext", async (req,res) => {
     )
     } catch (err) {
         console.log(err);
+    }
+    
+})
+
+//visszaad egy szöveget az adatbázisból, müködik, tesztelte: Lecza Tamás 05.29 
+app.get("/api/v1/onetext/:id", async (req,res) => {
+    console.log(req.params.id);
+    try {
+        const result = await pool.query(
+            "SELECT * FROM szoveg where idSzoveg = $1 ", [req.params.id]);
+            res.status(200).json(
+            result.rows[0]
+            );
+    } catch (err) {
+        console.log(err.message);
     }
     
 })
