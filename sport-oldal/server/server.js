@@ -199,5 +199,38 @@ app.get("/api/v1/onevideo/:id", async (req,res) => {
     }
     
 })
+// Video apik szöveg nelkül !! 
+// hozzáad egy videolinek a szöveg nélküli adatbázishoz. Működik, tesztelte: Lecza Tamás 05.29 
+app.post("/api/v1/addvideo/notext", async (req, res) => {
+    console.log(req.body);
+    var date_time = new Date();
+try {
+    const userid = 1;
+    const ujSzoveg = await  pool.query(
+        "INSERT INTO video_szoveg_nelkul (videonev_szoveg_nelkul, video_feltoltes_ideje , video_link, user_iduser) VALUES ($1,$2,$3,$4)" , [
+            req.body.videonev_szoveg_nelkul, date_time, req.body.video_link, userid]);
+            res.status(201).json({
+                status: date_time
+            })
+} catch (err) {
+    console.log(err.message)
+}
+})
+
+// visszaadja az összes videolinket a video_szoveg_nelkul adatbázisból 
+// müködik, tesztelte: Lecza Tamás 05.29
+app.get("/api/v1/getallvideo/notext", async (req,res) => {
+    try {
+        const result = await pool.query("SELECT * FROM video_szoveg_nelkul;")
+        console.log(result);
+        res.status(200).json(
+        result.rows
+        
+    )
+    } catch (err) {
+        console.log(err);
+    }
+    
+})
 
 app.listen(PORT, ()=> console.log( `server started on port ${PORT}`))
