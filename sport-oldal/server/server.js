@@ -67,29 +67,28 @@ app.post("/api/v1/adduser", async (req, res) => {
     
 })
 
-// update user // tesztelni!
+// update user // tesztelni tesztelve, működik 05.30 !
 
 app.put("/api/v1/updateuser/:id", async (req,res) => {
+    var date_time = new Date();
     try {
         const update = await pool.query(
-            "UPDATE users SET user_Szem_Szam = $1,user_Nev = $2,user_szul_ido = $3,user_felhasznalo_nev = $4,jelszo = $5,e_mail = $6,reg_datum = $7,user_role = $8 where id = $10 returning *",
-            [req.body.user_Nev, req.body.user_szul_ido,
-                req.user_felhasznalo_nev,req.body.jelszo,
-                req.body.e_mail,req.body.reg_datum,
-                req.body.user_role,req.body.id]
+            "UPDATE users SET user_Szem_Szam = $1, user_Nev = $2, user_szul_ido = $3, user_felhasznalo_nev = $4, jelszo = $5,e_mail = $6, reg_datum = $7, user_role = $8 where iduser = $9",
+            [req.body.user_Szem_Szam, 
+                req.body.user_Nev, req.body.user_szul_ido,
+                req.body.user_felhasznalo_nev,req.body.jelszo,
+                req.body.e_mail,date_time,
+                req.body.user_role,req.params.id]
         );
         res.status(200).json({
-                status: "siker",
-                data: {
-                    user: update.rows[0],
-                },
+                    user: update.rows[0]
             });
     } catch (err) {
         console.log(err.message)
     }
     
 });
-// update user // tesztelni!
+// delete user // tesztelni!
 app.delete("/api/v1/delusers/:id", async (req,res) => {
     try {
         const result = await pool.query("DELETE FROM users where iduser = $1 ", [req.params.id]);
@@ -107,10 +106,9 @@ app.post("/api/v1/addtext", async (req, res) => {
     console.log(req.body);
     var date_time = new Date();
 try {
-    const userid = 1;
     const ujSzoveg = await  pool.query(
         "INSERT INTO szoveg (szoveg_cim ,tartalom ,szoveg_feltolt_ideje ,user_iduser ) VALUES ($1,$2,$3,$4)" , [
-            req.body.szoveg, req.body.tartalom, date_time, userid]);
+            req.body.szoveg, req.body.tartalom, date_time, req.body.user_iduser]);
             res.status(201).json({
                 status: date_time
             })
@@ -148,6 +146,29 @@ app.get("/api/v1/onetext/:id", async (req,res) => {
     }
     
 })
+// update egy szöveget
+app.put("/api/v1/updatetext/:id", async (req,res) => {
+    var date_time = new Date();
+    try {
+        const update = await pool.query(
+            "UPDATE users SET user_Szem_Szam = $1, user_Nev = $2, user_szul_ido = $3, user_felhasznalo_nev = $4, jelszo = $5,e_mail = $6, reg_datum = $7, user_role = $8 where iduser = $9",
+            [req.body.user_Szem_Szam, 
+                req.body.user_Nev, req.body.user_szul_ido,
+                req.body.user_felhasznalo_nev,req.body.jelszo,
+                req.body.e_mail,date_time,
+                req.body.user_role,req.params.id]
+        );
+        res.status(200).json({
+                status: "siker",
+                data: {
+                    user: update.rows[0],
+                },
+            });
+    } catch (err) {
+        console.log(err.message)
+    }
+    
+});
 
 // Video apik szöveggel !! 
 // müködik, tesztelte: Lecza Tamás 05.29 
@@ -201,7 +222,7 @@ app.get("/api/v1/onevideo/:id", async (req,res) => {
 })
 // Video apik szöveg nelkül !! 
 // hozzáad egy videolinek a szöveg nélküli adatbázishoz. Működik, tesztelte: Lecza Tamás 05.29 
-app.post("/api/v1/addvideo/notext", async (req, res) => {
+app.post("/api/v1/addvideo/notext/", async (req, res) => {
     console.log(req.body);
     var date_time = new Date();
 try {
