@@ -172,11 +172,9 @@ app.post("/api/v1/addvideo", async (req, res) => {
     console.log(req.body);
     var date_time = new Date();
 try {
-    const userid = 1;
-    const szovegid = 2;
     const ujSzoveg = await  pool.query(
         "INSERT INTO video (videonev , video_feltoltes_ideje , video_link, user_iduser, szoveg_idszoveg ) VALUES ($1,$2,$3,$4,$5)" , [
-            req.body.videonev, date_time, req.body.video_link, userid, szovegid]);
+            req.body.videonev, date_time, req.body.video_link, req.body.user_iduser, req.body.szoveg_szovegid]);
             res.status(201).json({
                 status: date_time
             })
@@ -216,6 +214,25 @@ app.get("/api/v1/onevideo/:id", async (req,res) => {
     }
     
 })
+// frissít egy videot szöveggel
+app.put("/api/v1/updatevideo/:id", async (req,res) => {
+    var date_time = new Date();
+    try {
+        const update = await pool.query(
+            "UPDATE video SET videonev = $1, video_feltoltes_ideje = $2, video_link = $3, user_iduser = $4, szoveg_idSzoveg = $5 where idvideo = $6",
+            [req.body.videonev,req.body.video_feltoltes_ideje,req.body.video_link,req.body.user_iduser,req.body.szoveg_idSzoveg,req.params.id]
+        );
+        res.status(200).json({
+                status: "siker",
+                data: {
+                    user: update.rows[0],
+                },
+            });
+    } catch (err) {
+        console.log(err.message)
+    }
+    
+});
 // Video apik szöveg nelkül !! 
 // hozzáad egy videolinek a szöveg nélküli adatbázishoz. Működik, tesztelte: Lecza Tamás 05.29 
 app.post("/api/v1/addvideo/notext/", async (req, res) => {
