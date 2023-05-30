@@ -282,7 +282,7 @@ app.get("/api/v1/getonevideo/notext/:id", async (req,res) => {
     }
     
 })
-// frissíti a video szöveg nélküli adatbázisát  
+// frissíti a video szöveg nélküli adatbázisát , működik tesztelve 05.30 Lecza Tamás Zoltán
 app.put("/api/v1/updatevideo/notext/:id", async (req,res) => {
     var date_time = new Date();
     try {
@@ -321,4 +321,19 @@ try {
 }
 })
 
+
+// visszaadja az összes kép adatát az adatbázisból működik: Tesztelve 05.30 Lecza Tamás
+app.get("/api/v1/getallkep", async (req,res) => {
+    try {
+        const result = await pool.query("SELECT * FROM kep;")
+        console.log(result);
+        res.status(200).json(
+        result.rows
+        
+    )
+    } catch (err) {
+        console.log(err);
+    }
+    
+})
 app.listen(PORT, ()=> console.log( `server started on port ${PORT}`))
