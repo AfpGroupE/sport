@@ -152,7 +152,7 @@ app.put("/api/v1/updatetext/:id", async (req,res) => {
     try {
         const update = await pool.query(
             "UPDATE szoveg SET szoveg_cim = $1, tartalom = $2, szoveg_feltolt_ideje = $3, user_iduser = $4 where idSzoveg = $5",
-            [req.body.szoveg_cim,req.body.tartalom,req.body.szoveg_feltolt_ideje,req.body.user_iduser,req.params.id]
+            [req.body.szoveg_cim,req.body.tartalom,date_time,req.body.user_iduser,req.params.id]
         );
         res.status(200).json({
                 status: "siker",
@@ -214,13 +214,13 @@ app.get("/api/v1/onevideo/:id", async (req,res) => {
     }
     
 })
-// frissít egy videot szöveggel
+// frissít egy videot szöveggel, működik tesztelte: Lecza Tamás 05.30
 app.put("/api/v1/updatevideo/:id", async (req,res) => {
     var date_time = new Date();
     try {
         const update = await pool.query(
             "UPDATE video SET videonev = $1, video_feltoltes_ideje = $2, video_link = $3, user_iduser = $4, szoveg_idSzoveg = $5 where idvideo = $6",
-            [req.body.videonev,req.body.video_feltoltes_ideje,req.body.video_link,req.body.user_iduser,req.body.szoveg_idSzoveg,req.params.id]
+            [req.body.videonev,date_time,req.body.video_link,req.body.user_iduser,req.body.szoveg_idSzoveg,req.params.id]
         );
         res.status(200).json({
                 status: "siker",
@@ -288,7 +288,7 @@ app.put("/api/v1/updatevideo/notext/:id", async (req,res) => {
     try {
         const update = await pool.query(
             "UPDATE video_szoveg_nelkul SET videonev_szoveg_nelkul = $1, video_feltoltes_ideje = $2, video_link = $3, user_iduser = $4 where idvideo_szoveg_nelkul = $5",
-            [req.body.videonev_szoveg_nelkul,req.body.video_feltoltes_ideje,req.body.video_link,req.body.user_iduser,req.params.id]
+            [req.body.videonev_szoveg_nelkul,date_time,req.body.video_link,req.body.user_iduser,req.params.id]
         );
         res.status(200).json({
                 status: "siker",
@@ -308,11 +308,9 @@ app.post("/api/v1/addkep", async (req, res) => {
     console.log(req.body);
     var date_time = new Date();
 try {
-    const userid = 1;
-    const szovegid = 2;
     const ujSzoveg = await  pool.query(
         "INSERT INTO kep (kepnev, kep_link , kep_feltoltes_ideje, user_iduser, szoveg_idszoveg) VALUES ($1,$2,$3,$4,$5)" , [
-            req.body.kepnev, req.body.kep_link, date_time , userid, szovegid]);
+            req.body.kepnev, req.body.kep_link, date_time , req.body.user_iduser, req.body.szoveg_idSzoveg]);
             res.status(201).json({
                 status: date_time
             })
@@ -353,5 +351,21 @@ app.get("/api/v1/onekep/:id", async (req,res) => {
     }
     
 })
+// frissíti egy kép adatát // tesztelve 05.30 Lecza Tamás
 
+app.put("/api/v1/updatekep/:id", async (req,res) => {
+    var date_time = new Date();
+    try {
+        const update = await pool.query(
+            "UPDATE kep SET kepnev = $1, kep_link = $2, kep_feltoltes_ideje = $3, user_iduser = $4, szoveg_idszoveg = $5 where idkep = $6",
+            [req.body.kepnev,req.body.kep_link,date_time,req.body.user_iduser,req.body.szoveg_idszoveg,req.params.id]
+        );
+        res.status(200).json({
+                    user: update.rows[0]
+            });
+    } catch (err) {
+        console.log(err.message)
+    }
+    
+});
 app.listen(PORT, ()=> console.log( `server started on port ${PORT}`))
