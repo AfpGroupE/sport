@@ -414,4 +414,21 @@ app.get("/api/v1/onekep/notext/:id", async (req,res) => {
     }
     
 })
+// módosít egy képet a szöveg nélküli adatbázisban működik: Tesztelve 05.30 Lecza Tamás
+app.put("/api/v1/updatekep/notext/:id", async (req,res) => {
+    var date_time = new Date();
+    try {
+        const update = await pool.query(
+            "UPDATE kep_szoveg_nelkul SET kepnev_szoveg_nelkul = $1, kep_feltoltes_ideje = $2, kep_link = $3, user_iduser = $4 where idkep_szoveg_nelkul = $5",
+            [req.body.kepnev_szoveg_nelkul,date_time,req.body.kep_link,req.body.user_iduser,req.params.id]
+        );
+        res.status(200).json({
+                    user: update.rows[0]
+            });
+    } catch (err) {
+        console.log(err.message)
+    }
+    
+});
+
 app.listen(PORT, ()=> console.log( `server started on port ${PORT}`))
