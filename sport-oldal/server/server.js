@@ -146,17 +146,13 @@ app.get("/api/v1/onetext/:id", async (req,res) => {
     }
     
 })
-// update egy szöveget
+// frissít egy szöveget, működik tesztelte: Lecza Tamás 05.29 
 app.put("/api/v1/updatetext/:id", async (req,res) => {
     var date_time = new Date();
     try {
         const update = await pool.query(
-            "UPDATE users SET user_Szem_Szam = $1, user_Nev = $2, user_szul_ido = $3, user_felhasznalo_nev = $4, jelszo = $5,e_mail = $6, reg_datum = $7, user_role = $8 where iduser = $9",
-            [req.body.user_Szem_Szam, 
-                req.body.user_Nev, req.body.user_szul_ido,
-                req.body.user_felhasznalo_nev,req.body.jelszo,
-                req.body.e_mail,date_time,
-                req.body.user_role,req.params.id]
+            "UPDATE szoveg SET szoveg_cim = $1, tartalom = $2, szoveg_feltolt_ideje = $3, user_iduser = $4 where idSzoveg = $5",
+            [req.body.szoveg_cim,req.body.tartalom,req.body.szoveg_feltolt_ideje,req.body.user_iduser,req.params.id]
         );
         res.status(200).json({
                 status: "siker",
