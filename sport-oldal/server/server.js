@@ -336,4 +336,22 @@ app.get("/api/v1/getallkep", async (req,res) => {
     }
     
 })
+
+// visszaadja egy kép adatát az adatbázisból. működik: Tesztelve 05.30 Lecza Tamás
+
+app.get("/api/v1/onekep/:id", async (req,res) => {
+    console.log(req.params.id);
+    try {
+        const result = await pool.query(
+            "SELECT * FROM video where idvideo = $1 ", [req.params.id]);
+
+            res.status(200).json(
+            result.rows[0]
+            );
+    } catch (err) {
+        console.log(err.message);
+    }
+    
+})
+
 app.listen(PORT, ()=> console.log( `server started on port ${PORT}`))
