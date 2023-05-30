@@ -385,5 +385,33 @@ try {
     console.log(err.message)
 }
 })
+// visszaadja az összes kép adatát az adatbázisból működik: Tesztelve 05.30 Lecza Tamás
+app.get("/api/v1/getallkep/notext", async (req,res) => {
+    try {
+        const result = await pool.query("SELECT * FROM kep_szoveg_nelkul;")
+        console.log(result);
+        res.status(200).json(
+        result.rows
+        
+    )
+    } catch (err) {
+        console.log(err);
+    }
+    
+})
+// visszad egy képet a szöveg nélküli adatbázisból működik: Tesztelve 05.30 Lecza Tamás
+app.get("/api/v1/onekep/notext/:id", async (req,res) => {
+    console.log(req.params.id);
+    try {
+        const result = await pool.query(
+            "SELECT * FROM kep_szoveg_nelkul where idkep_szoveg_nelkul = $1 ", [req.params.id]);
 
+            res.status(200).json(
+            result.rows[0]
+            );
+    } catch (err) {
+        console.log(err.message);
+    }
+    
+})
 app.listen(PORT, ()=> console.log( `server started on port ${PORT}`))
