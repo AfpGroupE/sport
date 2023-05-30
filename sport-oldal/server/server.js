@@ -282,6 +282,25 @@ app.get("/api/v1/getonevideo/notext/:id", async (req,res) => {
     }
     
 })
+// frissíti a video szöveg nélküli adatbázisát  
+app.put("/api/v1/updatevideo/notext/:id", async (req,res) => {
+    var date_time = new Date();
+    try {
+        const update = await pool.query(
+            "UPDATE video_szoveg_nelkul SET videonev_szoveg_nelkul = $1, video_feltoltes_ideje = $2, video_link = $3, user_iduser = $4 where idvideo_szoveg_nelkul = $5",
+            [req.body.videonev_szoveg_nelkul,req.body.video_feltoltes_ideje,req.body.video_link,req.body.user_iduser,req.params.id]
+        );
+        res.status(200).json({
+                status: "siker",
+                data: {
+                    user: update.rows[0],
+                },
+            });
+    } catch (err) {
+        console.log(err.message)
+    }
+    
+});
 
 // Kép apik szöveggel !! 
 // müködik, tesztelte: Lecza Tamás 05.29 
