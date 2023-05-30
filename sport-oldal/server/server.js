@@ -310,7 +310,7 @@ app.post("/api/v1/addkep", async (req, res) => {
 try {
     const ujSzoveg = await  pool.query(
         "INSERT INTO kep (kepnev, kep_link , kep_feltoltes_ideje, user_iduser, szoveg_idszoveg) VALUES ($1,$2,$3,$4,$5)" , [
-            req.body.kepnev, req.body.kep_link, date_time , req.body.user_iduser, req.body.szoveg_idSzoveg]);
+            req.body.kepnev, req.body.kep_link, date_time , req.body.user_iduser, req.body.szoveg_idszoveg]);
             res.status(201).json({
                 status: date_time
             })
@@ -368,4 +368,22 @@ app.put("/api/v1/updatekep/:id", async (req,res) => {
     }
     
 });
+
+// hozzáad egy új képet szöveg nélkül // működik tesztelve 05.30 Lecza Tamás
+
+app.post("/api/v1/addkep/notext", async (req, res) => {
+    console.log(req.body);
+    var date_time = new Date();
+try {
+    const ujSzoveg = await  pool.query(
+        "INSERT INTO kep_szoveg_nelkul (kepnev_szoveg_nelkul, kep_feltoltes_ideje, kep_link, user_iduser) VALUES ($1,$2,$3,$4)" , [
+            req.body.kepnev_szoveg_nelkul, date_time, req.body.kep_link, req.body.user_iduser]);
+            res.status(201).json({
+                status: date_time
+            })
+} catch (err) {
+    console.log(err.message)
+}
+})
+
 app.listen(PORT, ()=> console.log( `server started on port ${PORT}`))
