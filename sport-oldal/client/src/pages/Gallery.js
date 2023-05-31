@@ -1,22 +1,56 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
+import axios from 'axios';
 
 export default function Gallery() {
   const [imageUrl, setImageUrl] = useState('');
   const [galleryImages, setGalleryImages] = useState([]);
   const [errorMessage, setErrorMessage] = useState('');
 
+  useEffect(() => {
+    // Oldal betöltésekor lekérjük az összes képet az adatbázisból
+    const fetchImages = async () => {
+      try {
+        const response = await axios.get('/api/v1/getallkep/notext');
+        if (response.status === 200) {
+          setGalleryImages(response.data.map(image => image.kep_link));
+        } else {
+          setErrorMessage('Hiba történt az adatok lekérésekor');
+        }
+        console.log(response.data);
+      } catch (error) {
+        setErrorMessage('Hiba történt a szerverrel való kommunikáció során');
+      }
+      
+    };
+
+    fetchImages();
+  }, []);
+
   const handleImageUrlChange = (e) => {
     setImageUrl(e.target.value);
     setErrorMessage('');
   };
 
-  const handleSaveImage = () => {
+  const handleSaveImage = async () => {
     try {
       const url = new URL(imageUrl);
-      setGalleryImages([...galleryImages, url.href]);
-      setImageUrl('');
+
+      // Hálózati kérés küldése a kép mentéséhez
+      const response = await axios.post('/api/v1/addkep/notext', {
+        kepnev_szoveg_nelkul: '', // Üres szöveg mező
+        kep_link: url.href,
+        user_iduser: 1, // Felhasználói azonosító
+      });
+
+      // A szerver válasza alapján hozzáadja a képet a galériához
+      if (response.status === 201) {
+        setGalleryImages([...galleryImages, url.href]);
+        setImageUrl('');
+      } else {
+        setErrorMessage('Hiba történt a kép mentésekor');
+      }
     } catch (error) {
-      setErrorMessage('Helytelen URL formátum');
+      setErrorMessage('Helytelen URL formátum vagy hiba történt a szerverrel való kommunikáció során');
     }
   };
 
