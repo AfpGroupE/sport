@@ -88,7 +88,7 @@ app.put("/api/v1/updateuser/:id", async (req,res) => {
     }
     
 });
-// delete user // tesztelni!
+// delete user muködik, tesztelve 06.04 Lecza Tamás 
 app.delete("/api/v1/delusers/:id", async (req,res) => {
     try {
         const result = await pool.query("DELETE FROM users where iduser = $1 ", [req.params.id]);
@@ -166,6 +166,19 @@ app.put("/api/v1/updatetext/:id", async (req,res) => {
     
 });
 
+// delete szoveg muködik, tesztelve 06.04 Lecza Tamás 
+app.delete("/api/v1/deltext/:id", async (req,res) => {
+    try {
+        const result = await pool.query("DELETE FROM szoveg where idszoveg = $1 ", [req.params.id]);
+        res.status(204).json({
+            status:"siker"
+        })
+    } catch (err) {
+        console.log(err.message)
+    }
+    
+})
+
 // Video apik szöveggel !! 
 // müködik, tesztelte: Lecza Tamás 05.29 
 app.post("/api/v1/addvideo", async (req, res) => {
@@ -233,6 +246,18 @@ app.put("/api/v1/updatevideo/:id", async (req,res) => {
     }
     
 });
+// delete video muködik, tesztelve 06.04 Lecza Tamás 
+app.delete("/api/v1/delvideo/:id", async (req,res) => {
+    try {
+        const result = await pool.query("DELETE FROM video where idvideo = $1 ", [req.params.id]);
+        res.status(204).json({
+            status:"siker"
+        })
+    } catch (err) {
+        console.log(err.message)
+    }
+    
+})
 // Video apik szöveg nelkül !! 
 // hozzáad egy videolinek a szöveg nélküli adatbázishoz. Működik, tesztelte: Lecza Tamás 05.29 
 app.post("/api/v1/addvideo/notext/", async (req, res) => {
@@ -301,7 +326,18 @@ app.put("/api/v1/updatevideo/notext/:id", async (req,res) => {
     }
     
 });
-
+// delete video_szoveg_nelkul muködik, tesztelve 06.04 Lecza Tamás 
+app.delete("/api/v1/delvideo/notext/:id", async (req,res) => {
+    try {
+        const result = await pool.query("DELETE FROM video_szoveg_nelkul where idvideo_szoveg_nelkul = $1 ", [req.params.id]);
+        res.status(204).json({
+            status:"siker"
+        })
+    } catch (err) {
+        console.log(err.message)
+    }
+    
+})
 // Kép apik szöveggel !! 
 // müködik, tesztelte: Lecza Tamás 05.29 
 app.post("/api/v1/addkep", async (req, res) => {
@@ -368,7 +404,18 @@ app.put("/api/v1/updatekep/:id", async (req,res) => {
     }
     
 });
-
+// delete video muködik, tesztelve 06.04 Lecza Tamás 
+app.delete("/api/v1/delkep/:id", async (req,res) => {
+    try {
+        const result = await pool.query("DELETE FROM kep where idkep = $1 ", [req.params.id]);
+        res.status(204).json({
+            status:"siker"
+        })
+    } catch (err) {
+        console.log(err.message)
+    }
+    
+})
 // hozzáad egy új képet szöveg nélkül // működik tesztelve 05.30 Lecza Tamás
 
 app.post("/api/v1/addkep/notext", async (req, res) => {
@@ -430,5 +477,18 @@ app.put("/api/v1/updatekep/notext/:id", async (req,res) => {
     }
     
 });
+
+// delete kep szoveg nelkul muködik, tesztelve 06.04 Lecza Tamás 
+app.delete("/api/v1/delvideo/:id", async (req,res) => {
+    try {
+        const result = await pool.query("DELETE FROM kep_szoveg_nelkul where idkep_szoveg_nelkul = $1 ", [req.params.id]);
+        res.status(204).json({
+            status:"siker"
+        })
+    } catch (err) {
+        console.log(err.message)
+    }
+    
+})
 
 app.listen(PORT, ()=> console.log( `server started on port ${PORT}`))
