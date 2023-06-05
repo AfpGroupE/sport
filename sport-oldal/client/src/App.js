@@ -13,6 +13,8 @@ import Register from "./pages/Register"
 import Logout from "./pages/Logout"
 import Users from "./pages/Users"
 import Employees from "./pages/Employees"
+import Edit from "./pages/Edit"
+import NewUser from "./pages/Newuser"
 import { Route, Routes } from "react-router-dom"
 import React, { useEffect, useState } from 'react'
 
@@ -48,6 +50,8 @@ fetch("/api").then(
         <Route path="/logout" element={<Logout />} />
         <Route path="/users" element={<Users />} />
         <Route path="/employees" element={<Employees />} />
+        <Route path="/edit" element={<Edit />} />
+        <Route path="/newuser" element={<NewUser />} />
       </Routes>
     </div>
     {/* <div>
