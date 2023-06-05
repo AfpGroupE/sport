@@ -7,16 +7,15 @@ const GymUserList = ({ gymUsers }) => {
       {gymUsers.map((user) => {
         return (
           <GymUser
-            key={user.id}
-            id={user.id}
-            username={user.username}
-            name={user.name}
-            userRole={user.website}
-            userEmail={user.email}
-            identityNumber={user.phone}            
-            firstName="firstname"
-            middleName="middlename"
-            dateOfBirth={user.address.street}
+            key={user.iduser}
+            id={user.iduser}
+            username={user.user_nev}
+            name={user.user_felhasznalo_nev}  
+            userEmail={user.e_mail}
+            identityNumber={user.user_szem_szam}
+            dateOfBirth={user.user_szul_ido.substring(0, 10).replaceAll("-", ".")}
+            userRole={user.user_role}
+            registerDate={user.reg_datum.substring(0, 10).replaceAll("-", ".")}  
           />
         );
       })}
@@ -25,3 +24,4 @@ const GymUserList = ({ gymUsers }) => {
 };
 
 export default GymUserList;
+
