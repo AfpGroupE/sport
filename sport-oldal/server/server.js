@@ -479,9 +479,10 @@ app.put("/api/v1/updatekep/notext/:id", async (req,res) => {
 });
 
 // delete kep szoveg nelkul muködik, tesztelve 06.04 Lecza Tamás 
-app.delete("/api/v1/delvideo/:id", async (req,res) => {
+app.delete("/api/v1/delkep/notext/:id", async (req,res) => {
     try {
         const result = await pool.query("DELETE FROM kep_szoveg_nelkul where idkep_szoveg_nelkul = $1 ", [req.params.id]);
+        console.log('Törölve ID: '+ req.params.id);
         res.status(204).json({
             status:"siker"
         })
