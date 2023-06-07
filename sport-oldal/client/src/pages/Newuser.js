@@ -1,5 +1,4 @@
 import { useState } from "react";
-//import React from "react";
 
 
 const Newuser = () => {
@@ -38,12 +37,9 @@ const Newuser = () => {
   }
 
   return (
-
-
     <div className="text-white m-3 p-3 bg-opacity-80 backdrop-blur-lg rounded-md bg-white">
       <h1 className="text-center font-mono font-extrabold m-5 text-5xl text-red-900">Új felhasználó</h1>
      
-
       <form className="grid gap-6 mb-6 md:grid-cols-2" onSubmit={handleSubmit}>
 
         <div>

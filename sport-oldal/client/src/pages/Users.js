@@ -22,7 +22,7 @@ export default function Users() {
  
 
   const filteredUsers = gymusers.filter((gymUser) => {
-    return gymUser.user_nev.toLowerCase().includes(searchfield.toLowerCase());
+    return gymUser.user_role >= 1 & gymUser.user_nev.toLowerCase().includes(searchfield.toLowerCase());
   });
 
 
@@ -43,5 +43,4 @@ export default function Users() {
       <UserList gymUsers={filteredUsers} />
     </div>
   );
-
 }
