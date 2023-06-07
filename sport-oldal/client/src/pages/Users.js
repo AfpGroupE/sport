@@ -33,10 +33,10 @@ export default function Users() {
   
   return (
       <div className="text-white m-3 p-3 bg-opacity-10 backdrop-blur-lg rounded-md bg-black">
-      <h1 className="text-center font-mono font-extrabold m-5 text-5xl text-blue-100">Users</h1>
+      <h1 className="text-center font-mono font-extrabold m-5 text-3xl text-blue-100">Felhasználók listája</h1>
       
       <Link to="/newuser" >
-      <button className="bg-orange-500 hover:bg-gray-100 text-gray-800 font-semibold m-3 py-2 px-4 border border-gray-400 rounded shadow" >Új felhasználó</button>
+      <button className="p-4 m-4 bg-cyan-500 hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow" >Új felhasználó hozzáadása</button>
       </Link>
 
       <SearchBox searchChange={onSearchChange} />
