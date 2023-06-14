@@ -15,8 +15,10 @@ import Users from "./pages/Users"
 import Employees from "./pages/Employees"
 import Edit from "./pages/Edit"
 import NewUser from "./pages/Newuser"
+import Privacy from "./pages/Privacy"
 import { Route, Routes } from "react-router-dom"
 import React, { useEffect, useState } from 'react'
+import CookieConsent from "react-cookie-consent";
 
 function App () {
 
@@ -49,6 +51,7 @@ fetch("/api").then(
         <Route path="/register" element={<Register />} />
         <Route path="/logout" element={<Logout />} />
         <Route path="/users" element={<Users />} />
+        <Route path="/Privacy" element={<Privacy />} />
         <Route path="/employees" element={<Employees />} />
         <Route path="/edit" element={<Edit />} />
         <Route path="/newuser" element={<NewUser />} />
@@ -63,6 +66,21 @@ fetch("/api").then(
             ))
         )}        
     </div> */}
+    <CookieConsent
+        buttonText={"Elfogad"}
+        buttonClasses={"primary"}
+        containerClasses="containerCookie"
+        contentClasses="messageCookie"
+      >
+        <p>
+          <strong>A felhasználói élmény fokozása érdekében cookie-kat használunk. </strong>
+          <span>
+            {" "}
+            Weboldalunk használatával Ön hozzájárul a cookie-k használatához.{" "}
+          </span>
+          <a href="/Privacy"><u>Tudj meg többet</u></a>.
+        </p>
+      </CookieConsent>
     <Footer/>
   </>
 

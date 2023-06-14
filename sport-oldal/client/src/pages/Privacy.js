@@ -1,0 +1,18 @@
+import React from 'react'
+
+export default function Privacy() {
+    return (
+        <div className="flex flex-col items-center justify-center w-screen h-screen mx-auto">
+
+<h1 className="text-center font-mono font-extrabold m-5 text-5xl text-blue-100">Sütik használata</h1>
+            <p className="w-1/2 mr-2 text-white items-center">Weboldalunkon sütiket (cookie-kat) használunk, hogy javítsuk böngészési élményét, és személyre szabott tartalmat és szolgáltatásokat biztosítsunk. A cookie-k kis szöveges fájlok, amelyek az Ön számítógépén vagy mobileszközén helyezkednek el, amikor meglátogat egy webhelyet. Segítenek a webhelynek megjegyezni preferenciáit, beállításait és bejelentkezési adatait, és zökkenőmentesebb élményt nyújtanak.
+Weboldalunkon többféle cookie-t használunk, beleértve a munkamenet cookie-kat, az állandó cookie-kat és a harmadik féltől származó cookie-kat. <br/><br/>A munkamenet-cookie-k ideiglenes cookie-k, amelyek a böngésző bezárásakor törlődnek, míg az állandó cookie-k meghatározott ideig az Ön készülékén maradnak. A harmadik féltől származó cookie-kat egy harmadik fél szolgáltató helyezi el, például a Google Analytics, hogy adatokat gyűjtsenek az Ön böngészési viselkedéséről, és elemzéseket biztosítsanak webhelyünk fejlesztésében.
+A cookie-k és a harmadik féltől származó szkriptek használata összhangban van adatvédelmi szabályzatunkkal, amely leírja, hogyan gyűjtjük, használjuk és védjük az Ön személyes adatait. Csak olyan adatokat gyűjtünk, amelyek a lehető legjobb felhasználói élmény biztosításához és weboldalunk teljesítményének javításához szükségesek.
+A Google Analytics egy harmadik féltől származó szkript, amelyet weboldalunkon használunk. <br/><br/>Segít megérteni, hogy a látogatók hogyan használják webhelyünket, például mely oldalakat keresik fel leggyakrabban és mennyi ideig. Ezeket az adatokat weboldalunk működésének és tartalmának javítására használjuk fel. A Google Analytics cookie-kat használ, hogy információkat gyűjtsön az Ön böngészési viselkedéséről, beleértve az Ön IP-címét és a weboldalunkon meglátogatott oldalakat. Ezeket az információkat a Google szerverein tároljuk, és megoszthatjuk más Google-szolgáltatásokkal.
+Ha nem szeretné, hogy a Google Analytics adatokat gyűjtsön az Ön böngészési viselkedéséről, akkor leiratkozhat a Google Analytics Opt-out Browser Add-on telepítésével.<br/><br/> A bővítmény megakadályozza, hogy a Google Analytics JavaScript (ga.js, analytics.js és dc.js) megosszon információkat a Google Analytics szolgáltatással a látogatási tevékenységről.
+A Google Analytics mellett más, harmadik féltől származó szkripteket és szolgáltatásokat is használhatunk weboldalunkon, például közösségimédia-bővítményeket és hirdetési hálózatokat. Ezek a szkriptek cookie-kat is használhatnak az Ön böngészési viselkedésével kapcsolatos adatok gyűjtésére, és megoszthatják ezeket az információkat más harmadik fél szolgáltatásaival.<br/><br/>
+Összességében a cookie-k és a harmadik féltől származó szkriptek használatának célja az Ön böngészési élményének javítása, valamint személyre szabott tartalmak és szolgáltatások biztosítása. Komolyan vesszük az Ön adatainak védelmét, és csak olyan adatokat gyűjtünk, amelyek a lehető legjobb felhasználói élmény biztosításához szükségesek. Ha bármilyen kérdése vagy aggálya van a cookie-k vagy harmadik féltől származó szkriptek használatával kapcsolatban, kérjük, vegye fel velünk a kapcsolatot weboldalunkon keresztül.</p>
+</div>
+
+    )
+}

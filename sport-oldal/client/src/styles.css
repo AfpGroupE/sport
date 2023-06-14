@@ -64,3 +64,39 @@ body {
 .footer-text {
   margin: 0;
 }
+
+.containerCookie {
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  z-index: 3;
+  background: #ffee9c;
+}
+
+.messageCookie {
+  margin: 0 0 10px;
+  padding: 10px 20px;
+  display: block;
+  line-height: 1.2em;
+  font-size: 1rem;
+  text-align: justify;
+  background: #ffee9c;
+  border-color: #d6ca8e;
+  color: #0a5a79;
+  margin: 0;
+  text-decoration: none;
+}
+
+.messageCookie p {
+  margin: 0;
+}
+
+.messageCookie a {
+  color: #0a5a79;
+  text-decoration: none;
+}
+
+.messageCookie {
+  margin-top: 10px;
+}
