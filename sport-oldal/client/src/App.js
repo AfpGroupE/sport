@@ -16,6 +16,7 @@ import Employees from "./pages/Employees"
 import Edit from "./pages/Edit"
 import NewUser from "./pages/Newuser"
 import Privacy from "./pages/Privacy"
+import Egeszsegtudatos from "./pages/Egeszsegtudatos"
 import { Route, Routes } from "react-router-dom"
 import React, { useEffect, useState } from 'react'
 import CookieConsent from "react-cookie-consent";
@@ -48,6 +49,7 @@ fetch("/api").then(
         <Route path="/news" element={<News />} />
         <Route path="/about" element={<About />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/egeszsegtudatos" element={<Egeszsegtudatos />} />
         <Route path="/register" element={<Register />} />
         <Route path="/logout" element={<Logout />} />
         <Route path="/users" element={<Users />} />
