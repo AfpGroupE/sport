@@ -70,3 +70,19 @@
 |4.25  | A módosított felhasználók adatai megfelelően jelennek meg, és kerülnek a szerver adatbázisába? |success|
 |4.26  | Ha nincs kitöltve minden mező akkor módosulnak a felhasználók? (hiba, ha igen) |success|
 |4.27  | Születési dátum beviteli mező formátumának ellenőrzése. |success|
+
+## 5. Galéria menüpont kialakítása, működésének tesztje
+
+|Lépés|Feladat|Teszt |Megjegyzés|
+|-----|-------|------|----------|
+|5.1  | Galéria megjelenítés ellenőrzése |success|
+|5.2  | Kép feltöltés sikeres? |success|
+|5.3  | Kép linkje és egyéb adatok megjelennek az adatbázisban? |success|
+|5.4  | Rossz/helytelen linket nem enged feltölteni? |success|
+|5.5  | Képek helyesen megjelennek a UI-on? |success|
+|5.6  | Képek megfelelően frissül a UI-on az új kép feltöltése után? |success|
+|5.7  | Különböző méretű képek jól illeszkednek? |success|
+|5.8  | Galéria oldal látogatásakor helyesen betölti az adatbázisban lévő képeket? |success|
+|5.9  | Meglévő képeket lehet törölni? |success|
+|5.10  | Kép linkje és egyéb adatok törlődnek az adatbázisból? |success|
+|5.11  | Frissen feltöltött képeket lehet törölni? |fail| Az oldal újratöltése után már működik. |
