@@ -107,6 +107,15 @@ Kép tartalom tárolásához szükséges adatok:
 ||User_idUser||
 ||Szoveg_idSzoveg||
 
+Kép tartalom tárolása szöveges tartalom nélkül:
+
+||Kep szöveg nélkül||
+|-|---------|-|
+||idKep||
+||Kepnev||
+||Kep_Feltoltes_Ideje||
+||User_idUser||
+
 Videó tartalom tárolásához szükséges adatok:
 
 ||Video||
@@ -117,6 +126,17 @@ Videó tartalom tárolásához szükséges adatok:
 ||Video_link||
 ||User_idUser||
 ||Szoveg_idSzoveg||
+
+Video tartalom tárolása szöveges tartalom nélkül
+
+||Video||
+|-|---------|-|
+||idVideo||
+||Videonev||
+||Video_Feltoltes_Ideje||
+||Video_link||
+||User_idUser||
+
 
 Új vendég felvitele
 ```mermaid
@@ -450,4 +470,4 @@ Nincsenek vásárolt szoftverkomponensek.
  
  **Adatbázis séma**
  
- ![database_schema](https://github.com/AfpGroupE/sport/blob/main/sport-oldal/docs/sportoloAdatbazisSema.png)
+ ![database_schema](https://github.com/AfpGroupE/sport/blob/main/sport-oldal/docs/sportoloAdatbazisSemaUpdate.png)
