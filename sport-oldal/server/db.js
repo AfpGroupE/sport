@@ -4,10 +4,10 @@ require('dotenv').config()
 const pool = new Pool({
     
     user: 'postgres',
-    password: 'Server',
+    password: 'passwort',
     host: "localhost",
     port: 5432,
-    database: 'applikacio',
+    database: 'applikacio2',
  }
 )
 module.exports = pool
