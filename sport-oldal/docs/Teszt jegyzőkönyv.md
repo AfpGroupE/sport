@@ -59,8 +59,7 @@
 |4.14  | A léthozott felhasználó adatai megfelelően jelennek meg, és kerülnek a szerver adatbázisába? |success|
 |4.15  | Ha nincs kitöltve minden mező akkor létrejön a felhasználó? (hiba, ha létrejön) |success|
 |4.16  | Születési dátum beviteli mező formátumának ellenőrzése. |success|
-|4.17  | Felhasználók listájában a törlés gomb működésének ellenőrzése. Kattintsuk a törlendő felhasználó kártyáján lévő törlés gombra.
-Sikerül törölni a kiválasztott felhasználót? |success|
+|4.17  | Felhasználók listájában a törlés gomb működésének ellenőrzése. Kattintsuk a törlendő felhasználó kártyáján lévő törlés gombra. Sikerül törölni a kiválasztott felhasználót? |success|
 |4.18  | Törlés hatására eltűnt a kártyája a listából? |success|
 |4.19  | Törlés hatására eltűnt  az adatbázisból? |success|
 |4.20  | Felhasználók listájában Szerkeszt funkció ellenőrzése. Megjelenik a "Felhasználók adatainak módosítása" felület? |success|
